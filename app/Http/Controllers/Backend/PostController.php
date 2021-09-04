@@ -7,11 +7,12 @@ use Illuminate\Http\Request;
 use App\Model\Post;
 use App\Model\Category;
 use App\Model\District;
+use Auth;
 
 class PostController extends Controller
 {
     public function view(){
-        $data['allData'] = Post::all();
+        $data['allData'] = Post::orderBy('id', 'DESC')->get();
 
         return view('backend.post.view-post', $data);
     }
@@ -45,51 +46,57 @@ class PostController extends Controller
     }
 
     public function edit($id){
-        $editData = District::find($id);
+        $data['editData'] = Post::find($id);
+        $data['categories'] = Category::all();
+        $data['districts'] = District::all();
 
-        return view('backend.district.add-district', compact('editData'));
+        return view('backend.post.add-post', $data);
     }
 
     public function update(Request $request, $id){
         $validatedData = $request->validate([
-            'name_bn' => 'required|unique:districts',
-            'name_en' => 'required|unique:districts',
+            'category_id' => 'required',
+            'district_id' => 'required',
+            'name_bn' => 'required',
+            'name_en' => 'required',
             'status' => 'required',
         ]);
-        $district = District::find($id);
-        $district->name_bn = $request->name_bn;
-        $district->name_en = $request->name_en;
-        $district->status = $request->status;
-        $district->updated_by = Auth::user()->id;
-        $district->save();
+        $post = Post::find($id);
+        $post->category_id = $request->category_id;
+        $post->district_id = $request->district_id;
+        $post->name_bn = $request->name_bn;
+        $post->name_en = $request->name_en;
+        $post->status = $request->status;
+        $post->updated_by = Auth::user()->id;
+        $post->save();
 
-        return redirect()->route('districts.view')->with('success', 'Data updated successfully');
+        return redirect()->route('posts.view')->with('success', 'Data updated successfully');
     }
 
     public function delete(Request $request){
-        $district = District::find($request->id);
-        $district->delete();
+        $post = Post::find($request->id);
+        $post->delete();
 
-        return redirect()->route('districts.view')->with('success', 'Data deleted successfully');
+        return redirect()->route('posts.view')->with('success', 'Data deleted successfully');
     }
 
     public function status(Request $request){
 		// dd($request->id);
-        $category_status =Category::find($request->category_id);
-        // dd($category_status);
-		if($category_status->status == 0)
+        $post_status =Post::find($request->id);
+        // dd($post_status);
+		if($post_status->status == 0)
 		{
-			$category_status->status = 1;
-			$category_status->save();
+			$post_status->status = 1;
+			$post_status->save();
 			
-		}elseif($category_status->status ==1 )
+		}elseif($post_status->status ==1 )
 		{   
-			$category_status->status = 0;
-			$category_status->save();	
+			$post_status->status = 0;
+			$post_status->save();	
 		}
 		
-        $category_status =Category::where('id', $request->category_id)->first();
+        $post_status =Post::where('id', $request->id)->first();
 		
-		return json_encode($category_status);
+		return json_encode($post_status);
 	}
 }

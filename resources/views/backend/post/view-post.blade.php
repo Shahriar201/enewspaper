@@ -48,13 +48,13 @@
                             <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>SL.</th>
-                                        <th>Category Name</th>
-                                        <th>District Name</th>
-                                        <th>Bangla Post</th>
-                                        <th>English Post</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th width="2%">SL.</th>
+                                        <th width="2%">Category Name</th>
+                                        <th width="2%">District Name</th>
+                                        <th width="40%">Bangla Post</th>
+                                        <th width="40%">English Post</th>
+                                        <th width="2%">Status</th>
+                                        <th width="2%">Action</th>
                                     </tr>
                                 </thead>
 
@@ -63,23 +63,23 @@
 
                                     <tr class="{{ $post->id }}">
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $post->name_bn }}</td>
-                                        <td>{{ $post->name_bn }}</td>
+                                        <td>{{ $post['category']['name_en'] }}</td>
+                                        <td>{{ $post['district']['name_en'] }}</td>
                                         <td>{{ $post->name_bn }}</td>
                                         <td>{{ $post->name_en }}</td>
                                         <td>
                                             <button id="{{ $post->id }}" class="btn btn-basic"
                                                 style="background-color:#faebd700;color:#3e5569"
-                                                onclick="districtStatusControll({{ $post->id }})">{{ $post->status == 0 ? 'Active' : 'Deactive' }}</button>
+                                                onclick="postStatusControll({{ $post->id }})">{{ $post->status == 0 ? 'Active' : 'Deactive' }}</button>
 
                                         </td>
                                         <td>
-                                            <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('districts.edit', $post->id)}}">
+                                            <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('posts.edit', $post->id)}}">
                                                 <i class="fa fa-edit">
 
                                                 </i>
                                             </a>
-                                            <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('districts.delete') }}" data-token="{{ csrf_token() }}" data-id="{{ $post->id }}">
+                                            <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('posts.delete') }}" data-token="{{ csrf_token() }}" data-id="{{ $post->id }}">
                                                 <i class="fa fa-trash">
 
                                                 </i>
@@ -110,18 +110,18 @@
 
 {{-- Button Active Deactive by ajax --}}
 <script>
-    function districtStatusControll($id) {
+    function postStatusControll($id) {
 
         var x;
-        var district_id = $id;
+        var id = $id;
 
         var _token = $('input[name="_token"]').val();
     
         $.ajax({
-            url: "{{ route('districts.status.controll') }}",
+            url: "{{ route('posts.status.controll') }}",
             method: "POST",
             data: {
-                district_id: district_id,
+                id: id,
                 _token: _token
             },
 

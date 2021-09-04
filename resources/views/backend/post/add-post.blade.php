@@ -83,7 +83,7 @@
                                             <label for="name">Bangla Post</label>
                                             {{-- <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
                                                 class="form-control form-control-sm"> --}}
-                                                <textarea name="name_bn" id="name_bn" class="form-control">{{ @$editData->name_bn }}</textarea>
+                                                <textarea name="name_bn" id="name_bn" class="form-control" rows="10">{{ @$editData->name_bn }}</textarea>
                                             <font style="color:red">
                                                 {{ $errors->has('name_bn') ? $errors->first('name_bn') : '' }}
                                             </font>
@@ -91,7 +91,7 @@
 
                                         <div class="form-group col-md-12">
                                             <label for="name">English Post</label>
-                                            <textarea name="name_en" id="name_en" class="form-control">{{ @$editData->name_en }}</textarea>
+                                            <textarea name="name_en" id="name_en" class="form-control" rows="10">{{ @$editData->name_en }}</textarea>
                                             <font style="color:red">
                                                 {{ $errors->has('name_en') ? $errors->first('name_en') : '' }}
                                             </font>

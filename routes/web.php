@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Frontend\FrontendController@index');
+Route::get('menu-national', 'Frontend\FrontendController@nationalMenu')->name('national.menu.view');
 
 Auth::routes(['register' => false]);
 
@@ -29,6 +30,17 @@ Route::group(['middleware'=>'admin'], function(){
         Route::post('/store', 'Backend\ProfileController@update')->name('profiles.update');
         Route::get('/password/view', 'Backend\ProfileController@passwordView')->name('profiles.password.view');
         Route::post('/password/update', 'Backend\ProfileController@passwordUpdate')->name('profiles.password.update');
+        
+    });
+
+    Route::prefix('logos')->group(function(){
+    
+        Route::get('/view', 'Backend\LogoController@view')->name('logos.view');
+        Route::get('/add', 'Backend\LogoController@add')->name('logos.add');
+        Route::post('/store', 'Backend\LogoController@store')->name('logos.store');  
+        Route::get('/edit/{id}', 'Backend\LogoController@edit')->name('logos.edit');
+        Route::post('/update/{id}', 'Backend\LogoController@update')->name('logos.update');
+        Route::post('/delete', 'Backend\LogoController@delete')->name('logos.delete');
         
     });
     
@@ -60,6 +72,16 @@ Route::group(['middleware'=>'admin'], function(){
         Route::post('/update/{id}', 'Backend\PostController@update')->name('posts.update');
         Route::post('/delete', 'Backend\PostController@delete')->name('posts.delete');
         Route::post('/post/status/controll','Backend\PostController@status')->name('posts.status.controll');      
+    });
+    
+    Route::prefix('nationals')->group(function(){
+        Route::get('/view', 'Backend\NationalMenuController@view')->name('nationals.view');
+        Route::get('/add', 'Backend\NationalMenuController@add')->name('nationals.add');
+        Route::post('/store', 'Backend\NationalMenuController@store')->name('nationals.store');  
+        Route::get('/edit/{id}', 'Backend\NationalMenuController@edit')->name('nationals.edit');
+        Route::post('/update/{id}', 'Backend\NationalMenuController@update')->name('nationals.update');
+        Route::post('/delete', 'Backend\NationalMenuController@delete')->name('nationals.delete');
+        Route::post('/post/status/controll','Backend\NationalMenuController@status')->name('nationals.status.controll');      
     });
 });
 

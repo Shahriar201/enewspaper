@@ -18,7 +18,7 @@
 
 
 
-                        <li><a href="category/1/National.html"> জাতীয়
+                        <li><a href="{{ route('national.menu.view') }}"> জাতীয়
                             </a>
 
 

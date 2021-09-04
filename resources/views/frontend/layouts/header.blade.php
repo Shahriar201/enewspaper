@@ -58,8 +58,8 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="logo">
-                    <a href="https://themebazar.xyz/laraflash">
-                        <img src="{{ asset('public/frontend') }}/templateimage/60e42537e85de.gif" alt="">
+                    <a href="{{ url('/') }}">
+                        <img src="{{ url('public/upload/logo_images/' .$logo->image) }}" alt="">
                     </a>
                 </div>
             </div>
