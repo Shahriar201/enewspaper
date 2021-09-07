@@ -51,9 +51,11 @@
                                         <th width="2%">SL.</th>
                                         <th width="2%">Category Name</th>
                                         <th width="2%">District Name</th>
+                                        <th width="2%">Title</th>
                                         <th width="40%">Bangla Post</th>
                                         <th width="40%">English Post</th>
                                         <th width="2%">Status</th>
+                                        <th width="10%">Image</th>
                                         <th width="2%">Action</th>
                                     </tr>
                                 </thead>
@@ -65,6 +67,7 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $post['category']['name_en'] }}</td>
                                         <td>{{ $post['district']['name_en'] }}</td>
+                                        <td>{{ $post->title }}</td>
                                         <td>{{ $post->name_bn }}</td>
                                         <td>{{ $post->name_en }}</td>
                                         <td>
@@ -72,6 +75,10 @@
                                                 style="background-color:#faebd700;color:#3e5569"
                                                 onclick="postStatusControll({{ $post->id }})">{{ $post->status == 0 ? 'Active' : 'Deactive' }}</button>
 
+                                        </td>
+                                        <td>
+                                            <img src="{{ !empty($post->image) ? url('public/upload/post_images/' . $post->image) : url('public/upload/no_image.jpg') }}"
+                                                style="width: 50px; height: 55px;">
                                         </td>
                                         <td>
                                             <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('posts.edit', $post->id)}}">

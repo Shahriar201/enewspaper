@@ -80,6 +80,16 @@
                                         </div>
 
                                         <div class="form-group col-md-12">
+                                            <label for="title">Title</label>
+                                            {{-- <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
+                                                class="form-control form-control-sm"> --}}
+                                                <textarea name="title" id="title" class="form-control">{{ @$editData->title }}</textarea>
+                                            <font style="color:red">
+                                                {{ $errors->has('title') ? $errors->first('title') : '' }}
+                                            </font>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-12">
                                             <label for="name">Bangla Post</label>
                                             {{-- <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
                                                 class="form-control form-control-sm"> --}}
@@ -111,7 +121,17 @@
                                             </font>
                                         </div>
 
-                                        <div class="form-group col-md-6" style="padding-top: 30px">
+                                        <div class="form-group col-md-4">
+                                            <label for="">Image</label>
+                                            <input type="file" name="image" id="image" class="form-control">
+                                        </div>
+        
+                                        <div class="form-group col-md-4">
+                                            <img id="showImage" src="{{ (!empty($editData->image))?url('public/upload/post_images/'.$editData->image):url('public/upload/no_image.jpg') }}"
+                                             style="width: 100px; height: 105px; border: 1px solid #000;">
+                                        </div>
+
+                                        <div class="form-group col-md-6">
                                             <input type="submit" value="{{ @$editData ? 'Update' : 'Submit' }}"
                                                 class="btn btn-primary btn-sm">
                                         </div>
@@ -149,6 +169,9 @@
                     district_id: {
                         required: true,
                     },
+                    title: {
+                        required: true,
+                    },
                     name_bn: {
                         required: true,
                     },
@@ -156,6 +179,9 @@
                         required: true,
                     },
                     status: {
+                        required: true,
+                    },
+                    image: {
                         required: true,
                     },
 

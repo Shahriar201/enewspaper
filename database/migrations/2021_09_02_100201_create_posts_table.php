@@ -17,9 +17,12 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->integer('category_id');
             $table->integer('district_id');
+            $table->string('title');
             $table->longText('name_bn')->nullable();
             $table->longText('name_en');
+            // $table->string('slug')->nullabe();
             $table->integer('status')->nullable();
+            $table->string('image')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
             $table->timestamps();

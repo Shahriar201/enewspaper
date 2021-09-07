@@ -59,7 +59,7 @@
             <div class="col-lg-4 col-md-4">
                 <div class="logo">
                     <a href="{{ url('/') }}">
-                        <img src="{{ url('public/upload/logo_images/' .$logo->image) }}" alt="">
+                        {{-- <img src="{{ url('public/upload/logo_images/' .$logo->image) }}" alt=""> --}}
                     </a>
                 </div>
             </div>

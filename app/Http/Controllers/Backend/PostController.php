@@ -8,6 +8,7 @@ use App\Model\Post;
 use App\Model\Category;
 use App\Model\District;
 use Auth;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -29,17 +30,27 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'required',
             'district_id' => 'required',
+            'title' => 'required',
             'name_bn' => 'required',
             'name_en' => 'required',
             'status' => 'required',
+            'image' => 'required',
         ]);
         $post = new Post();
         $post->category_id = $request->category_id;
         $post->district_id = $request->district_id;
+        $post->title = $request->title;
         $post->name_bn = $request->name_bn;
         $post->name_en = $request->name_en;
+        // $post->slug = str_slug($request->name_en);
         $post->status = $request->status;
         $post->created_by = Auth::user()->id;
+        if($request->file('image')){
+            $file = $request->file('image');
+            $fileName = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/post_images'), $fileName);
+            $post['image'] = $fileName;
+        }
         $post->save();
 
         return redirect()->route('posts.view')->with('success', 'Data inserted successfully');
@@ -57,17 +68,28 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'required',
             'district_id' => 'required',
+            'title' => 'required',
             'name_bn' => 'required',
             'name_en' => 'required',
             'status' => 'required',
+            'image' => 'required',
         ]);
         $post = Post::find($id);
         $post->category_id = $request->category_id;
         $post->district_id = $request->district_id;
+        $post->title = $request->title;
         $post->name_bn = $request->name_bn;
         $post->name_en = $request->name_en;
+        // $product->slug = str_slug($request->name_en);
         $post->status = $request->status;
         $post->updated_by = Auth::user()->id;
+        if($request->file('image')){
+            $file = $request->file('image');
+            @unlink(public_path('upload/post_images/'.$post->image));
+            $fileName = date('YmdHi').$file->getClientOriginalName();
+            $file->move(public_path('upload/post_images'), $fileName);
+            $post['image'] = $fileName;
+        }
         $post->save();
 
         return redirect()->route('posts.view')->with('success', 'Data updated successfully');
@@ -75,6 +97,9 @@ class PostController extends Controller
 
     public function delete(Request $request){
         $post = Post::find($request->id);
+        if(file_exists('public/upload/post_images/' . $post->image) AND ! empty($post->image)){
+            unlink('public/upload/post_images/' . $post->image);
+        }
         $post->delete();
 
         return redirect()->route('posts.view')->with('success', 'Data deleted successfully');
