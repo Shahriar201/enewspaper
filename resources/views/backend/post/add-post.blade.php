@@ -57,24 +57,32 @@
 
                                     <div class="form-row">
 
-                                       <div class="form-group col-md-6">
+                                       <div class="form-group col-md-4">
                                             <label for="">Category</label>
                                             <select name="category_id" id="category_id" class="form-control">
                                                 <option value="">Select Category</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}" {{ (@$editData->category_id==$category->id)? "selected": "" }}>{{ $category->name_en }}</option>
-                                                    {{-- <option value="{{ $category->id }}" {{ (@$editData->category_id==$category->id)? "selected": "" }}>{{ $category->name_bn }}</option> --}}
                                                 @endforeach
                                             </select>
                                         </div>
                                        
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4">
                                             <label for="">District</label>
                                             <select name="district_id" id="district_id" class="form-control">
                                                 <option value="">Select Category</option>
                                                 @foreach ($districts as $district)
                                                     <option value="{{ $district->id }}" {{ (@$editData->district_id==$district->id)? "selected": "" }}>{{ $district->name_en }}</option>
-                                                    {{-- <option value="{{ $district->id }}" {{ (@$editData->district_id==$district->id)? "selected": "" }}>{{ $district->name_bn }}</option> --}}
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-4">
+                                            <label for="">Menu</label>
+                                            <select name="menu_id" id="menu_id" class="form-control">
+                                                <option value="">Select Menu</option>
+                                                @foreach ($menues as $menu)
+                                                    <option value="{{ $menu->id }}" {{ (@$editData->menu_id==$menu->id)? "selected": "" }}>{{ $menu->name_en }}</option>
                                                 @endforeach
                                             </select>
                                         </div>

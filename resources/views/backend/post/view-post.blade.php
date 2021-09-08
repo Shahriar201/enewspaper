@@ -44,19 +44,19 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-
                             <table id="example1" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
                                         <th width="2%">SL.</th>
                                         <th width="2%">Category Name</th>
                                         <th width="2%">District Name</th>
+                                        <th width="2%">Menu</th>
                                         <th width="2%">Title</th>
                                         <th width="40%">Bangla Post</th>
                                         <th width="40%">English Post</th>
-                                        <th width="2%">Status</th>
                                         <th width="10%">Image</th>
-                                        <th width="2%">Action</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
 
@@ -67,6 +67,7 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $post['category']['name_en'] }}</td>
                                         <td>{{ $post['district']['name_en'] }}</td>
+                                        <td>{{ $post['menu']['name_en'] }}</td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->name_bn }}</td>
                                         <td>{{ $post->name_en }}</td>

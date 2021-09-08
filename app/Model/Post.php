@@ -13,4 +13,8 @@ class Post extends Model
     public function district(){
         return $this->belongsTo(District::class, 'district_id', 'id');
     }
+    
+    public function menu(){
+        return $this->belongsTo(Menu::class, 'menu_id', 'id');
+    }
 }

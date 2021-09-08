@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Model\Post;
 use App\Model\Category;
 use App\Model\District;
+use App\Model\Menu;
 use Auth;
 use Illuminate\Support\Str;
 
@@ -22,6 +23,7 @@ class PostController extends Controller
         $data['categories'] = Category::where('status', '0')->get();
         // $data['categories'] = Category::select('name_en')->where('status', '0')->get();
         $data['districts'] = District::where('status', '0')->get();
+        $data['menues'] = Menu::where('status', '0')->get();
 
         return view('backend.post.add-post', $data);
     }
@@ -30,6 +32,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'required',
             'district_id' => 'required',
+            'menu_id' => 'required',
             'title' => 'required',
             'name_bn' => 'required',
             'name_en' => 'required',
@@ -39,6 +42,7 @@ class PostController extends Controller
         $post = new Post();
         $post->category_id = $request->category_id;
         $post->district_id = $request->district_id;
+        $post->menu_id = $request->menu_id;
         $post->title = $request->title;
         $post->name_bn = $request->name_bn;
         $post->name_en = $request->name_en;
@@ -60,6 +64,7 @@ class PostController extends Controller
         $data['editData'] = Post::find($id);
         $data['categories'] = Category::all();
         $data['districts'] = District::all();
+        $data['menues'] = Menu::all();
 
         return view('backend.post.add-post', $data);
     }
@@ -68,6 +73,7 @@ class PostController extends Controller
         $validatedData = $request->validate([
             'category_id' => 'required',
             'district_id' => 'required',
+            'menu_id' => 'required',
             'title' => 'required',
             'name_bn' => 'required',
             'name_en' => 'required',
@@ -77,10 +83,10 @@ class PostController extends Controller
         $post = Post::find($id);
         $post->category_id = $request->category_id;
         $post->district_id = $request->district_id;
+        $post->menu_id = $request->menu_id;
         $post->title = $request->title;
         $post->name_bn = $request->name_bn;
         $post->name_en = $request->name_en;
-        // $product->slug = str_slug($request->name_en);
         $post->status = $request->status;
         $post->updated_by = Auth::user()->id;
         if($request->file('image')){
