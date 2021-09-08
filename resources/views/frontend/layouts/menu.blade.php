@@ -14,18 +14,31 @@
                             <a href="https://themebazar.xyz/laraflash"> <i class="fas fa-home"></i>
                             </a>
                         </li>
+                        
+                            @foreach ($menues as $menu)
+                                <li>
+                                    <a href="{{ route('national.menu.view') }}">
+                                        {{ $menu->name_bn }}
+                                    </a>
 
+                                    @if ($menu->name_bn == 	'সারাদেশ')
+                                    <ul>
+                                        @foreach ($districts as $district)
+                                        <li>
+                                            <a href="">
+                                                {{ $district->name_bn }}
+                                            </a>
+                                        </li>
+                                        @endforeach
+                                        
+                                    </ul>
+                                    @endif
+                                    
+                                </li>
+                            @endforeach                           
+                        
 
-
-
-                        <li><a href="{{ route('national.menu.view') }}"> জাতীয়
-                            </a>
-
-
-
-                        </li>
-
-                        <li><a href="category/2/International.html"> আন্তর্জাতিক
+                        {{-- <li><a href="category/2/International.html"> আন্তর্জাতিক
                             </a>
 
 
@@ -221,7 +234,7 @@
                             </ul>
                         </li>
 
-                        <li><a href="index.html">| English </a></li>
+                        <li><a href="index.html">| English </a></li> --}}
 
                     </ul>
                 </div>

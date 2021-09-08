@@ -33,6 +33,18 @@ Route::group(['middleware'=>'admin'], function(){
         
     });
 
+    Route::prefix('menues')->group(function(){
+    
+        Route::get('/view', 'Backend\MenuController@view')->name('menues.view');
+        Route::get('/add', 'Backend\MenuController@add')->name('menues.add');
+        Route::post('/store', 'Backend\MenuController@store')->name('menues.store');  
+        Route::get('/edit/{id}', 'Backend\MenuController@edit')->name('menues.edit');
+        Route::post('/update/{id}', 'Backend\MenuController@update')->name('menues.update');
+        Route::post('/delete', 'Backend\MenuController@delete')->name('menues.delete');
+
+        Route::post('/menu/status/controll','Backend\MenuController@status')->name('menues.status.controll');      
+    });
+
     Route::prefix('logos')->group(function(){
     
         Route::get('/view', 'Backend\LogoController@view')->name('logos.view');

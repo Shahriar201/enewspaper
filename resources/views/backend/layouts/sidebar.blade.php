@@ -75,6 +75,25 @@
             </ul>
         </li>
 
+        <li class="nav-item has-treeview {{ ($prefix=='/menues')?'menu-open':'' }}">
+            <a href="" class="nav-link">
+                <i class="nav-icon fa fa-image"></i>
+                <p>
+                    Manage Menu
+                    <i class="fas fa-angle-left right"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{ route('menues.view') }}" class="nav-link {{ ($route=='menues.view')?'active':'' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>View Menu</p>
+                    </a>
+                </li>
+                
+            </ul>
+        </li>
+
         <li class="nav-item has-treeview {{ ($prefix=='/categories')?'menu-open':'' }}">
             <a href="" class="nav-link">
                 <i class="nav-icon fa fa-file"></i>

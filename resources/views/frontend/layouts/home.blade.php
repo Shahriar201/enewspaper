@@ -10,9 +10,36 @@
                         <div class="col-lg-7 col-md-7">
                             <div class="themesbazar_led_active owl-carousel">
 
+                                @foreach ($posts as $post)
+                                    <div class="secOne_newsContent">
+                                        <div class="sec-one-image">
+                                            <a
+                                                href="">
+                                                <img class="lazyload"
+                                                    {{-- src="{{ asset('public/upload/post_images/' .$post->image) }}" --}}
+                                                    data-src="{{ url('public/upload/post_images/' . $post->image) }}"
+                                                    alt="{{ $post->name_bn }}"
+                                                    title="{{ $post->name_bn }}" /></a>
+
+                                            <div class="sec-small-cat">
+                                                {{-- <a href="{{ route('post.wise.product', $post->id) }}">  --}}
+                                                    বিনোদন
+                                                </a>
+                                            </div>
 
 
-                                <div class="secOne_newsContent">
+                                            <h1 class="sec-one-title">
+                                                <a
+                                                    href="">
+                                                    {{ $post->title }}
+
+                                                </a>
+                                            </h1>
+                                        </div>
+                                    </div>
+                                @endforeach
+
+                                {{-- <div class="secOne_newsContent">
                                     <div class="sec-one-image">
                                         <a
                                             href="view-post/154/%e0%a6%ad%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%b2%e0%a6%bf%e0%a6%89%e0%a6%a1%e0%a7%87-%e0%a6%95%e0%a6%be%e0%a6%9c-%e0%a6%95%e0%a6%b0%e0%a7%87%e0%a6%a8-%e0%a6%a8%e0%a6%be-%e0%a6%b6%e0%a6%be%e0%a6%b9%e0%a6%b0%e0%a7%81%e0%a6%96-%e0%a6%96%e0%a6%be%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a6%be%e0%a6%95%e0%a6%bf%e0%a6%b8%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%a8%e0%a6%bf-%e0%a6%a8%e0%a6%be%e0%a7%9f%e0%a6%bf%e0%a6%95%e0%a6%be.html">
@@ -209,9 +236,7 @@
                                             </a>
                                         </h1>
                                     </div>
-                                </div>
-
-
+                                </div> --}}
 
 
                             </div>
