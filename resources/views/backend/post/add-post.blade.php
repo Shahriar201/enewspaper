@@ -189,9 +189,9 @@
                     status: {
                         required: true,
                     },
-                    image: {
-                        required: true,
-                    },
+                    // image: {
+                    //     required: true,
+                    // },
 
                 },
                 messages: {

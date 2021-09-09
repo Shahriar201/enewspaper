@@ -78,7 +78,6 @@ class PostController extends Controller
             'name_bn' => 'required',
             'name_en' => 'required',
             'status' => 'required',
-            'image' => 'required',
         ]);
         $post = Post::find($id);
         $post->category_id = $request->category_id;
