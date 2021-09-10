@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
         // factory(App\User::class, 3)->make();
         factory(App\Model\Category::class, 30)->create();
-        factory(App\Model\Post::class, 30)->create();
+        // factory(App\Model\Post::class, 30)->create();
 
         //Create user
         $user = new User();

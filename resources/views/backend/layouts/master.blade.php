@@ -23,7 +23,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('public/backend/dist/css/adminlte.min.css') }}">
     <!-- overlayScrollbars -->
-    <link rel="stylesheet" href="{{ asset('public/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('public/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="{{ asset('public/backend/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
@@ -40,7 +41,8 @@
 
     {{-- Select2 --}}
     <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="{{ asset('public/backend') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <link rel="stylesheet"
+        href="{{ asset('public/backend') }}/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 
     <!-- jQuery -->
     <script src="{{ asset('public/backend/plugins/jquery/jquery.min.js') }}"></script>
@@ -57,6 +59,13 @@
     {{-- Sweet alert --}}
     <script src="{{ asset('public/backend') }}/sweetalert/sweetalert.js" type="text/javascript"></script>
     <link rel="stylesheet" href="{{ asset('public/backend') }}/sweetalert/sweetalert.css" type="text/css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Summernote CSS -->
+	<link href="{{asset('public/backend/css/summernote-bs4.min.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
 </head>
@@ -75,7 +84,8 @@
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i
+                            class="fas fa-bars"></i></a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
                     <a href="index3.html" class="nav-link">Home</a>
@@ -325,13 +335,12 @@
                 return false;
             })
         })
-
     </script>
 
     {{-- Approved Sweet Alert --}}
     <script type="text/javascript">
-        $(function(){
-            $(document).on('click', '#approveBtn', function(e){
+        $(function() {
+            $(document).on('click', '#approveBtn', function(e) {
                 e.preventDefault();
                 var link = $(this).attr("href");
                 Swal.fire({
@@ -342,19 +351,18 @@
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'Yes, approved it!'
-                    }).then((result) => {
+                }).then((result) => {
                     if (result.isConfirmed) {
                         window.location.href = link;
                         Swal.fire(
-                        'Approved!',
-                        'Your file has been approved.',
-                        'success'
+                            'Approved!',
+                            'Your file has been approved.',
+                            'success'
                         )
                     }
-                    })
+                })
             });
         });
-
     </script>
 
     {{-- Real time image with JS --}}
@@ -372,9 +380,9 @@
         });
     </script>
 
-    {{-- Select2 JS--}}
+    {{-- Select2 JS --}}
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $('.select2').select2();
         })
     </script>
@@ -392,7 +400,16 @@
 
             });
         });
+    </script>
 
+    <!-- include summernote js -->
+    {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script> --}}
+
+    <!-- Summernote-->
+    <script src="{{asset('public/backend/js/summernote-bs4.min.js')}}"></script>
+    <script type="text/javascript">
+        $('#summernote').summernote({
+        });
     </script>
 
 </body>

@@ -54,7 +54,7 @@
                                         <th width="2%">Title</th>
                                         <th width="40%">Bangla Post</th>
                                         <th width="40%">English Post</th>
-                                        <th width="10%">Image</th>
+                                        <th width="5%">Image</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -65,12 +65,12 @@
 
                                     <tr class="{{ $post->id }}">
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $post['category']['name_en'] }}</td>
-                                        <td>{{ $post['district']['name_en'] }}</td>
-                                        <td>{{ $post['menu']['name_en'] }}</td>
-                                        <td>{{ $post->title }}</td>
-                                        <td>{{ $post->name_bn }}</td>
-                                        <td>{{ $post->name_en }}</td>
+                                        <td>{{ $post['category']['name_bn'] }}</td>
+                                        <td>{{ $post['district']['name_bn'] }}</td>
+                                        <td>{!! $post['menu']['name_bn'] !!}</td>
+                                        <td>{!! $post->title !!}</td>
+                                        <td>{!! $post->name_bn !!}</td>
+                                        <td>{!! $post->name_en !!}</td>
                                         <td>
                                             <button id="{{ $post->id }}" class="btn btn-basic"
                                                 style="background-color:#faebd700;color:#3e5569"

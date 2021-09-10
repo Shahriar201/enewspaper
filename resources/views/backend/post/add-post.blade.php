@@ -57,32 +57,38 @@
 
                                     <div class="form-row">
 
-                                       <div class="form-group col-md-4">
+                                        <div class="form-group col-md-4">
                                             <label for="">Category</label>
                                             <select name="category_id" id="category_id" class="form-control">
                                                 <option value="">Select Category</option>
                                                 @foreach ($categories as $category)
-                                                    <option value="{{ $category->id }}" {{ (@$editData->category_id==$category->id)? "selected": "" }}>{{ $category->name_en }}</option>
+                                                    <option value="{{ $category->id }}"
+                                                        {{ @$editData->category_id == $category->id ? 'selected' : '' }}>
+                                                        {{ $category->name_en }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                       
+
                                         <div class="form-group col-md-4">
                                             <label for="">District</label>
                                             <select name="district_id" id="district_id" class="form-control">
                                                 <option value="">Select Category</option>
                                                 @foreach ($districts as $district)
-                                                    <option value="{{ $district->id }}" {{ (@$editData->district_id==$district->id)? "selected": "" }}>{{ $district->name_en }}</option>
+                                                    <option value="{{ $district->id }}"
+                                                        {{ @$editData->district_id == $district->id ? 'selected' : '' }}>
+                                                        {{ $district->name_en }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
-                                        
+
                                         <div class="form-group col-md-4">
                                             <label for="">Menu</label>
                                             <select name="menu_id" id="menu_id" class="form-control">
                                                 <option value="">Select Menu</option>
                                                 @foreach ($menues as $menu)
-                                                    <option value="{{ $menu->id }}" {{ (@$editData->menu_id==$menu->id)? "selected": "" }}>{{ $menu->name_en }}</option>
+                                                    <option value="{{ $menu->id }}"
+                                                        {{ @$editData->menu_id == $menu->id ? 'selected' : '' }}>
+                                                        {{ $menu->name_en }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -91,17 +97,19 @@
                                             <label for="title">Title</label>
                                             {{-- <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
                                                 class="form-control form-control-sm"> --}}
-                                                <textarea name="title" id="title" class="form-control">{{ @$editData->title }}</textarea>
+                                            <textarea name="title" id="summernote"
+                                                class="form-control">{{ @$editData->title }}</textarea>
                                             <font style="color:red">
                                                 {{ $errors->has('title') ? $errors->first('title') : '' }}
                                             </font>
                                         </div>
-                                        
+
                                         <div class="form-group col-md-12">
-                                            <label for="name">Bangla Post</label>
+                                            <label for="name_bn">Bangla Post</label>
                                             {{-- <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
                                                 class="form-control form-control-sm"> --}}
-                                                <textarea name="name_bn" id="name_bn" class="form-control" rows="10">{{ @$editData->name_bn }}</textarea>
+                                            <textarea name="name_bn" id="summernote_bangla"
+                                                class="form-control">{{ @$editData->name_bn }}</textarea>
                                             <font style="color:red">
                                                 {{ $errors->has('name_bn') ? $errors->first('name_bn') : '' }}
                                             </font>
@@ -109,7 +117,8 @@
 
                                         <div class="form-group col-md-12">
                                             <label for="name">English Post</label>
-                                            <textarea name="name_en" id="name_en" class="form-control" rows="10">{{ @$editData->name_en }}</textarea>
+                                            <textarea name="name_en" id="summernote_english" class="form-control"
+                                                rows="10">{{ @$editData->name_en }}</textarea>
                                             <font style="color:red">
                                                 {{ $errors->has('name_en') ? $errors->first('name_en') : '' }}
                                             </font>
@@ -133,10 +142,11 @@
                                             <label for="">Image</label>
                                             <input type="file" name="image" id="image" class="form-control">
                                         </div>
-        
+
                                         <div class="form-group col-md-4">
-                                            <img id="showImage" src="{{ (!empty($editData->image))?url('public/upload/post_images/'.$editData->image):url('public/upload/no_image.jpg') }}"
-                                             style="width: 100px; height: 105px; border: 1px solid #000;">
+                                            <img id="showImage"
+                                                src="{{ !empty($editData->image) ? url('public/upload/post_images/' . $editData->image) : url('public/upload/no_image.jpg') }}"
+                                                style="width: 100px; height: 105px; border: 1px solid #000;">
                                         </div>
 
                                         <div class="form-group col-md-6">
@@ -210,6 +220,21 @@
                     $(element).removeClass('is-invalid');
                 }
             });
+        });
+    </script>
+
+    <!-- Summernote-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#summernote_bangla').summernote();
+        });
+    </script>
+
+    <!-- Summernote-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#summernote_english').summernote();
+            // height: 200
         });
     </script>
 

@@ -16,7 +16,7 @@
                                             <a href="">
                                                 <img class="lazyload" {{-- src="{{ asset('public/upload/post_images/' .$post->image) }}" --}}
                                                     data-src="{{ url('public/upload/post_images/' . $post->image) }}"
-                                                    alt="{{ $post->name_bn }}" title="{{ $post->name_bn }}" /></a>
+                                                    alt="{!! $post->name_bn !!}" title="{!! $post->name_bn !!}" /></a>
 
                                             <div class="sec-small-cat">
                                                 {{-- <a href="{{ route('post.wise.product', $post->id) }}"> --}}
@@ -57,13 +57,13 @@
                                                 <a href="">
                                                     <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                         data-src="{{ url('public/upload/post_images/' . $post->image) }}"
-                                                        alt="{{ $post->title }}" title="{{ $post->title }}" />
+                                                        alt="{!! $post->title !!}" title="{!! $post->title !!}" />
                                                 </a>
 
                                             </div>
                                             <h4 class="secOne-subTitle">
                                                 <a href="">
-                                                    {{ $post->title }}
+                                                    {!! $post->title !!}
 
                                                 </a>
                                             </h4>
@@ -101,7 +101,7 @@
                                         <a href="">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $random->image) }}"
-                                                alt="{{ $random->title }}" title="{{ $random->title }}" /></a>
+                                                alt="{!! $random->title !!}" title="{!! $random->title !!}" /></a>
 
                                         <div class="sec-small-cat1">
                                             <a href="#">
@@ -113,7 +113,7 @@
 
                                         <h5 class="secOne_mallTitle">
                                             <a href="">
-                                                {{ $random->title }}
+                                                {!! $random->title !!}
 
                                             </a>
                                         </h5>
@@ -141,13 +141,13 @@
                                         <a href="">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $random->image) }}"
-                                                alt="{{ $random->title }}" title="{{ $random->title }}" /></a>
+                                                alt="{!! $random->title !!}" title="{!! $random->title !!}" /></a>
 
 
                                     </div>
                                     <h4 class="secOne-subTitle">
                                         <a
-                                            href="view-post/154/%e0%a6%ad%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%b2%e0%a6%bf%e0%a6%89%e0%a6%a1%e0%a7%87-%e0%a6%95%e0%a6%be%e0%a6%9c-%e0%a6%95%e0%a6%b0%e0%a7%87%e0%a6%a8-%e0%a6%a8%e0%a6%be-%e0%a6%b6%e0%a6%be%e0%a6%b9%e0%a6%b0%e0%a7%81%e0%a6%96-%e0%a6%96%e0%a6%be%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a6%be%e0%a6%95%e0%a6%bf%e0%a6%b8%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%a8%e0%a6%bf-%e0%a6%a8%e0%a6%be%e0%a7%9f%e0%a6%bf%e0%a6%95%e0%a6%be.html">
+                                            href="">
                                             {{ $random->title }}
 
                                         </a>
@@ -314,12 +314,12 @@
                                         <img class="lazyload"
                                             {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                             data-src="{{ url('public/upload/post_images/' .$last_post->image) }}"
-                                            alt="{{ $last_post->title }}"
-                                            title="{{ $last_post->title }}" /></a>
+                                            alt="{!! $last_post->title !!}"
+                                            title="{!! $last_post->title !!}" /></a>
 
                                     <h4 class="tab_hadding"><a
                                             href="">
-                                            {{ $last_post->title }}
+                                            {!! $last_post->title !!}
 
                                         </a></h4>
 
@@ -351,406 +351,19 @@
                                         <img class="lazyload"
                                             {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                             data-src="{{ url('public/upload/post_images/' .$popular_post->image) }}"
-                                            alt="{{ $popular_post->title }}"
-                                            title="{{ $popular_post->title }}" /></a>
+                                            alt="{!! $popular_post->title !!}"
+                                            title="{!! $popular_post->title !!}" /></a>
 
 
                                     <h4 class="tab_hadding"><a
                                             href="">
-                                            {{ $popular_post->title }}
+                                            {!! $popular_post->title !!}
 
                                         </a></h4>
 
                                 </div>
                                 @endforeach
-                                
-
-
-
-                                {{-- <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/73/%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7-%e0%a6%b9%e0%a7%9f%e0%a6%a8%e0%a6%bf-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a7%81%e0%a6%a6%e0%a7%87%e0%a6%ac%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%87%e0%a6%87-%e0%a6%ac%e0%a6%bf%e0%a7%9c%e0%a6%ae%e0%a7%8d%e0%a6%ac%e0%a6%a8%e0%a6%be.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608aa4a08dfc3.png"
-                                            alt="বন্ধ হয়নি ক্ষুদেবার্তার সেই বিড়ম্বনা"
-                                            title="বন্ধ হয়নি ক্ষুদেবার্তার সেই বিড়ম্বনা" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/73/%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7-%e0%a6%b9%e0%a7%9f%e0%a6%a8%e0%a6%bf-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a7%81%e0%a6%a6%e0%a7%87%e0%a6%ac%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%87%e0%a6%87-%e0%a6%ac%e0%a6%bf%e0%a7%9c%e0%a6%ae%e0%a7%8d%e0%a6%ac%e0%a6%a8%e0%a6%be.html">
-                                            বন্ধ হয়নি ক্ষুদেবার্তার সেই বিড়ম্বনা
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d0a31acb24.png"
-                                            alt="বিধিনিষেধ আরও ৭ দিন বাড়ছে" title="বিধিনিষেধ আরও ৭ দিন বাড়ছে" /></a>
-
-                                    <a href="view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html"
-                                        class="tab-icon"><i class="fa fa-play"></i></a>
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html">
-                                            বিধিনিষেধ আরও ৭ দিন বাড়ছে
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/145/%e0%a6%b8%e0%a6%bf%e0%a6%b2%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%a4%e0%a6%b0%e0%a7%81%e0%a6%a3%e0%a7%80%e0%a6%b0-%e0%a6%9d%e0%a7%81%e0%a6%b2%e0%a6%a8%e0%a7%8d%e0%a6%a4-%e0%a6%b2%e0%a6%be%e0%a6%b6-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be%e0%a6%b0.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d38abacb5c.png"
-                                            alt="সিলেটে তরুণীর ঝুলন্ত লাশ উদ্ধার"
-                                            title="সিলেটে তরুণীর ঝুলন্ত লাশ উদ্ধার" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/145/%e0%a6%b8%e0%a6%bf%e0%a6%b2%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%a4%e0%a6%b0%e0%a7%81%e0%a6%a3%e0%a7%80%e0%a6%b0-%e0%a6%9d%e0%a7%81%e0%a6%b2%e0%a6%a8%e0%a7%8d%e0%a6%a4-%e0%a6%b2%e0%a6%be%e0%a6%b6-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be%e0%a6%b0.html">
-                                            সিলেটে তরুণীর ঝুলন্ত লাশ উদ্ধার
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a89f57a41a.png"
-                                            alt="করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন"
-                                            title="করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন" /></a>
-
-                                    <a href="view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html"
-                                        class="tab-icon"><i class="fa fa-play"></i></a>
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html">
-                                            করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/44/%e0%a6%88%e0%a6%a6%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%9a%e0%a6%ae%e0%a6%95-%e0%a6%a8%e0%a6%bf%e0%a6%b6%e0%a7%8b-%e0%a6%a4%e0%a6%bf%e0%a6%b6%e0%a6%be-%e0%a6%9c%e0%a7%81%e0%a6%9f%e0%a6%bf.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a91e662810.png"
-                                            alt="ঈদে আরিয়ানের চমক নিশো-তিশা জুটি"
-                                            title="ঈদে আরিয়ানের চমক নিশো-তিশা জুটি" /></a>
-
-                                    <a href="view-post/44/%e0%a6%88%e0%a6%a6%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%9a%e0%a6%ae%e0%a6%95-%e0%a6%a8%e0%a6%bf%e0%a6%b6%e0%a7%8b-%e0%a6%a4%e0%a6%bf%e0%a6%b6%e0%a6%be-%e0%a6%9c%e0%a7%81%e0%a6%9f%e0%a6%bf.html"
-                                        class="tab-icon"><i class="fa fa-play"></i></a>
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/44/%e0%a6%88%e0%a6%a6%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%9a%e0%a6%ae%e0%a6%95-%e0%a6%a8%e0%a6%bf%e0%a6%b6%e0%a7%8b-%e0%a6%a4%e0%a6%bf%e0%a6%b6%e0%a6%be-%e0%a6%9c%e0%a7%81%e0%a6%9f%e0%a6%bf.html">
-                                            ঈদে আরিয়ানের চমক নিশো-তিশা জুটি
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/58/%e0%a6%9a%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ad%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%86%e0%a6%ac%e0%a7%87%e0%a6%a6%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a6%ae%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%b2-%e0%a7%ad-%e0%a6%ae%e0%a7%87-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%a8%e0%a7%8d%e0%a6%a4.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a9e720a91d.png"
-                                            alt="চবিতে ভর্তি আবেদনের সময় বাড়ল ৭ মে পর্যন্ত"
-                                            title="চবিতে ভর্তি আবেদনের সময় বাড়ল ৭ মে পর্যন্ত" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/58/%e0%a6%9a%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ad%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%86%e0%a6%ac%e0%a7%87%e0%a6%a6%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a6%ae%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%b2-%e0%a7%ad-%e0%a6%ae%e0%a7%87-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%a8%e0%a7%8d%e0%a6%a4.html">
-                                            চবিতে ভর্তি আবেদনের সময় বাড়ল ৭ মে পর্যন্ত
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/84/%e0%a7%a7%e0%a7%af%e0%a7%ad%e0%a7%a7-%e0%a6%b8%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%ab-%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a-_-%e0%a6%ab%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%97%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%b0%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%a1.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608aae6d3e5c2.png"
-                                            alt="১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড"
-                                            title="১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/84/%e0%a7%a7%e0%a7%af%e0%a7%ad%e0%a7%a7-%e0%a6%b8%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%ab-%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a-_-%e0%a6%ab%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%97%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%b0%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%a1.html">
-                                            ১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/94/%e0%a6%ac%e0%a6%be%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%be%e0%a6%b2%e0%a7%80%e0%a6%b0-%e0%a6%95%e0%a6%a3%e0%a7%8d%e0%a6%a0-%e0%a6%b8%e0%a6%be%e0%a6%b9%e0%a6%bf%e0%a6%a4%e0%a7%8d%e0%a6%af-%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a6%b8%e0%a7%8d%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a7%87%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a7%9f-%e0%a6%9a%e0%a7%8c%e0%a6%a7%e0%a7%81%e0%a6%b0%e0%a7%80.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608ab1aa406c2.png"
-                                            alt="বাঙ্গালীর কণ্ঠ সাহিত্য পুরস্কার পেলেন স্বপঞ্জয় চৌধুরী"
-                                            title="বাঙ্গালীর কণ্ঠ সাহিত্য পুরস্কার পেলেন স্বপঞ্জয় চৌধুরী" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/94/%e0%a6%ac%e0%a6%be%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%be%e0%a6%b2%e0%a7%80%e0%a6%b0-%e0%a6%95%e0%a6%a3%e0%a7%8d%e0%a6%a0-%e0%a6%b8%e0%a6%be%e0%a6%b9%e0%a6%bf%e0%a6%a4%e0%a7%8d%e0%a6%af-%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a6%b8%e0%a7%8d%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a7%87%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a7%9f-%e0%a6%9a%e0%a7%8c%e0%a6%a7%e0%a7%81%e0%a6%b0%e0%a7%80.html">
-                                            বাঙ্গালীর কণ্ঠ সাহিত্য পুরস্কার পেলেন স্বপঞ্জয় চৌধুরী
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/142/%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a7%87%e0%a6%a4%e0%a6%be%e0%a6%b6%e0%a7%82%e0%a6%a8%e0%a7%8d%e0%a6%af-%e0%a6%b8%e0%a7%87%e0%a6%ae%e0%a6%be%e0%a6%87%e0%a7%9f%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d3795a6643.png"
-                                            alt="ক্রেতাশূন্য সেমাইয়ের বাজার" title="ক্রেতাশূন্য সেমাইয়ের বাজার" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/142/%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a7%87%e0%a6%a4%e0%a6%be%e0%a6%b6%e0%a7%82%e0%a6%a8%e0%a7%8d%e0%a6%af-%e0%a6%b8%e0%a7%87%e0%a6%ae%e0%a6%be%e0%a6%87%e0%a7%9f%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0.html">
-                                            ক্রেতাশূন্য সেমাইয়ের বাজার
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/37/%e2%80%98%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%b8%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%b8-%e0%a6%ae%e0%a7%8b%e0%a6%95%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b2%e0%a6%be%e0%a7%9f-%e0%a6%a1%e0%a6%bf%e0%a6%9c%e0%a6%bf%e0%a6%9f%e0%a6%be%e0%a6%b2-%e0%a6%86%e0%a6%87%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a6%b0%e0%a7%80-%e0%a6%ad%e0%a7%82%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf%e2%80%99.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a8f9898407.jpg"
-                                            alt="‘তথ্যসন্ত্রাস মোকাবিলায় ডিজিটাল আইনের কার্যকরী ভূমিকা জরুরি’"
-                                            title="‘তথ্যসন্ত্রাস মোকাবিলায় ডিজিটাল আইনের কার্যকরী ভূমিকা জরুরি’" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/37/%e2%80%98%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%b8%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%b8-%e0%a6%ae%e0%a7%8b%e0%a6%95%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b2%e0%a6%be%e0%a7%9f-%e0%a6%a1%e0%a6%bf%e0%a6%9c%e0%a6%bf%e0%a6%9f%e0%a6%be%e0%a6%b2-%e0%a6%86%e0%a6%87%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a6%b0%e0%a7%80-%e0%a6%ad%e0%a7%82%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf%e2%80%99.html">
-                                            ‘তথ্যসন্ত্রাস মোকাবিলায় ডিজিটাল আইনের কার্যকরী ভূমিকা জরুরি’
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/153/%e0%a6%9a%e0%a6%9f%e0%a7%8d%e0%a6%9f%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a7%8b%e0%a6%a5%e0%a6%be%e0%a7%9f-%e0%a6%95%e0%a6%96%e0%a6%a8-%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%9c%e0%a6%be%e0%a6%ae%e0%a6%be%e0%a6%a4.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d3c5a6ebf5.png"
-                                            alt="চট্টগ্রামের কোথায় কখন ঈদের জামাত"
-                                            title="চট্টগ্রামের কোথায় কখন ঈদের জামাত" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/153/%e0%a6%9a%e0%a6%9f%e0%a7%8d%e0%a6%9f%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a7%8b%e0%a6%a5%e0%a6%be%e0%a7%9f-%e0%a6%95%e0%a6%96%e0%a6%a8-%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%9c%e0%a6%be%e0%a6%ae%e0%a6%be%e0%a6%a4.html">
-                                            চট্টগ্রামের কোথায় কখন ঈদের জামাত
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/137/%e0%a6%ad%e0%a7%8b%e0%a6%b2%e0%a6%be%e0%a6%b0-%e0%a7%a7%e0%a7%a6-%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%87-%e0%a6%88%e0%a6%a6%e0%a7%81%e0%a6%b2-%e0%a6%ab%e0%a6%bf%e0%a6%a4%e0%a6%b0-%e0%a6%89%e0%a6%a6%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%a8.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d34d8b2cd4.png"
-                                            alt="ভোলার ১০ গ্রামে ঈদুল ফিতর উদযাপন"
-                                            title="ভোলার ১০ গ্রামে ঈদুল ফিতর উদযাপন" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/137/%e0%a6%ad%e0%a7%8b%e0%a6%b2%e0%a6%be%e0%a6%b0-%e0%a7%a7%e0%a7%a6-%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%87-%e0%a6%88%e0%a6%a6%e0%a7%81%e0%a6%b2-%e0%a6%ab%e0%a6%bf%e0%a6%a4%e0%a6%b0-%e0%a6%89%e0%a6%a6%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%a8.html">
-                                            ভোলার ১০ গ্রামে ঈদুল ফিতর উদযাপন
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/32/%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%95%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%80%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%87%e0%a6%96%e0%a6%be-%e0%a6%8f%e0%a6%ac%e0%a6%82-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%ae%e0%a6%bf%e0%a6%a4%e0%a6%bf-%e0%a6%ac%e0%a7%8b%e0%a6%a7.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a8e0457d87.png"
-                                            alt="সম্পর্কের সীমারেখা এবং পরিমিতি বোধ"
-                                            title="সম্পর্কের সীমারেখা এবং পরিমিতি বোধ" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/32/%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%95%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%80%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%87%e0%a6%96%e0%a6%be-%e0%a6%8f%e0%a6%ac%e0%a6%82-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%ae%e0%a6%bf%e0%a6%a4%e0%a6%bf-%e0%a6%ac%e0%a7%8b%e0%a6%a7.html">
-                                            সম্পর্কের সীমারেখা এবং পরিমিতি বোধ
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/57/%e0%a6%b0%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b0-%e0%a6%a8%e0%a6%a4%e0%a7%81%e0%a6%a8-%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%89%e0%a6%aa%e0%a6%a6%e0%a7%87%e0%a6%b7%e0%a7%8d%e0%a6%9f%e0%a6%be-%e0%a6%85%e0%a6%a7%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%95-%e0%a6%a4%e0%a6%be%e0%a6%b0%e0%a7%87%e0%a6%95-%e0%a6%a8%e0%a7%82%e0%a6%b0.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a9e3b5442d.png"
-                                            alt="রাবির নতুন ছাত্র উপদেষ্টা অধ্যাপক তারেক নূর"
-                                            title="রাবির নতুন ছাত্র উপদেষ্টা অধ্যাপক তারেক নূর" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/57/%e0%a6%b0%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b0-%e0%a6%a8%e0%a6%a4%e0%a7%81%e0%a6%a8-%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%89%e0%a6%aa%e0%a6%a6%e0%a7%87%e0%a6%b7%e0%a7%8d%e0%a6%9f%e0%a6%be-%e0%a6%85%e0%a6%a7%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%95-%e0%a6%a4%e0%a6%be%e0%a6%b0%e0%a7%87%e0%a6%95-%e0%a6%a8%e0%a7%82%e0%a6%b0.html">
-                                            রাবির নতুন ছাত্র উপদেষ্টা অধ্যাপক তারেক নূর
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/116/%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a6%b0-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%81%e0%a6%b7%e0%a6%bf%e0%a6%af%e0%a6%bc%e0%a7%87-%e0%a6%a8%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%bf%e0%a6%95%e0%a6%b2%e0%a7%8d%e0%a6%aa-%e0%a6%aa%e0%a6%a5-%e0%a6%96%e0%a7%8b%e0%a6%81%e0%a6%9c%e0%a6%be-%e0%a6%b9%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608ac0f057167.png"
-                                            alt="শিক্ষার ক্ষতি পুষিয়ে নিতে বিকল্প পথ খোঁজা হচ্ছে"
-                                            title="শিক্ষার ক্ষতি পুষিয়ে নিতে বিকল্প পথ খোঁজা হচ্ছে" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/116/%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a6%b0-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%81%e0%a6%b7%e0%a6%bf%e0%a6%af%e0%a6%bc%e0%a7%87-%e0%a6%a8%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%bf%e0%a6%95%e0%a6%b2%e0%a7%8d%e0%a6%aa-%e0%a6%aa%e0%a6%a5-%e0%a6%96%e0%a7%8b%e0%a6%81%e0%a6%9c%e0%a6%be-%e0%a6%b9%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87.html">
-                                            শিক্ষার ক্ষতি পুষিয়ে নিতে বিকল্প পথ খোঁজা হচ্ছে
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/113/%e0%a6%95%e0%a6%93%e0%a6%ae%e0%a6%bf-%e0%a6%ae%e0%a6%be%e0%a6%a6%e0%a6%b0%e0%a6%be%e0%a6%b8%e0%a6%be%e0%a6%b0-%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%95%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a8%e0%a7%80%e0%a6%a4%e0%a6%bf-%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a6%bf%e0%a6%a6%e0%a7%8d%e0%a6%a7.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608abf7d76340.png"
-                                            alt="কওমি মাদরাসার ছাত্র-শিক্ষকদের রাজনীতি নিষিদ্ধ"
-                                            title="কওমি মাদরাসার ছাত্র-শিক্ষকদের রাজনীতি নিষিদ্ধ" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/113/%e0%a6%95%e0%a6%93%e0%a6%ae%e0%a6%bf-%e0%a6%ae%e0%a6%be%e0%a6%a6%e0%a6%b0%e0%a6%be%e0%a6%b8%e0%a6%be%e0%a6%b0-%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%95%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a8%e0%a7%80%e0%a6%a4%e0%a6%bf-%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a6%bf%e0%a6%a6%e0%a7%8d%e0%a6%a7.html">
-                                            কওমি মাদরাসার ছাত্র-শিক্ষকদের রাজনীতি নিষিদ্ধ
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/31/%e0%a6%ae%e0%a6%be%e0%a7%9f%e0%a6%be%e0%a6%ac%e0%a6%a4%e0%a7%80-_-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%ac-%e0%a7%a6%e0%a7%ab.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608a8db84740b.png"
-                                            alt="মায়াবতী : পর্ব ০৫" title="মায়াবতী : পর্ব ০৫" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/31/%e0%a6%ae%e0%a6%be%e0%a7%9f%e0%a6%be%e0%a6%ac%e0%a6%a4%e0%a7%80-_-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%ac-%e0%a7%a6%e0%a7%ab.html">
-                                            মায়াবতী : পর্ব ০৫
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/110/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a6%b0-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%8b%e0%a6%b7%e0%a6%be%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a7%87%e0%a6%9f%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%a6-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%b0%e0%a6%be%e0%a6%a6%e0%a7%8d%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ac%e0%a6%bf.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/608abe4b43bb1.png"
-                                            alt="করোনার ক্ষতি পোষাতে বাজেটের ২০ শতাংশ শিক্ষায় বরাদ্দের দাবি"
-                                            title="করোনার ক্ষতি পোষাতে বাজেটের ২০ শতাংশ শিক্ষায় বরাদ্দের দাবি" /></a>
-
-                                    <a href="view-post/110/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a6%b0-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%8b%e0%a6%b7%e0%a6%be%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a7%87%e0%a6%9f%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%a6-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%b0%e0%a6%be%e0%a6%a6%e0%a7%8d%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ac%e0%a6%bf.html"
-                                        class="tab-icon"><i class="fa fa-play"></i></a>
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/110/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a6%b0-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%8b%e0%a6%b7%e0%a6%be%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a7%87%e0%a6%9f%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%a6-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%b6%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%b0%e0%a6%be%e0%a6%a6%e0%a7%8d%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ac%e0%a6%bf.html">
-                                            করোনার ক্ষতি পোষাতে বাজেটের ২০ শতাংশ শিক্ষায় বরাদ্দের দাবি
-
-                                        </a></h4>
-
-                                </div>
-
-
-
-                                <div class="tab-image tab-border">
-                                    <a
-                                        href="view-post/150/%e0%a6%ae%e0%a6%be%e0%a6%b6%e0%a6%b0%e0%a7%81%e0%a6%ae-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a6%ad%e0%a6%be%e0%a6%97%e0%a7%8d%e0%a6%af-%e0%a6%ab%e0%a6%bf%e0%a6%b0%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%ab%e0%a7%81%e0%a6%b2%e0%a7%87%e0%a6%b0.html">
-                                        <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                            data-src="https://themebazar.xyz/laraflash/public/postimages/609d3b135e729.png"
-                                            alt="মাশরুম চাষে ভাগ্য ফিরেছে সাইফুলের"
-                                            title="মাশরুম চাষে ভাগ্য ফিরেছে সাইফুলের" /></a>
-
-
-                                    <h4 class="tab_hadding"><a
-                                            href="view-post/150/%e0%a6%ae%e0%a6%be%e0%a6%b6%e0%a6%b0%e0%a7%81%e0%a6%ae-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a6%ad%e0%a6%be%e0%a6%97%e0%a7%8d%e0%a6%af-%e0%a6%ab%e0%a6%bf%e0%a6%b0%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%ab%e0%a7%81%e0%a6%b2%e0%a7%87%e0%a6%b0.html">
-                                            মাশরুম চাষে ভাগ্য ফিরেছে সাইফুলের
-
-                                        </a></h4>
-
-                                </div> --}}
-
-
+ 
 
                             </div>
 
