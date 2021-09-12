@@ -71,15 +71,16 @@
                                         <td>{!! $post->title !!}</td>
                                         <td>{!! $post->name_bn !!}</td>
                                         <td>{!! $post->name_en !!}</td>
+                                        
+                                        <td>
+                                            <img src="{{ !empty($post->image) ? url('public/upload/post_images/' . $post->image) : url('public/upload/no_image.jpg') }}"
+                                                style="width: 50px; height: 55px;">
+                                        </td>
                                         <td>
                                             <button id="{{ $post->id }}" class="btn btn-basic"
                                                 style="background-color:#faebd700;color:#3e5569"
                                                 onclick="postStatusControll({{ $post->id }})">{{ $post->status == 0 ? 'Active' : 'Deactive' }}</button>
 
-                                        </td>
-                                        <td>
-                                            <img src="{{ !empty($post->image) ? url('public/upload/post_images/' . $post->image) : url('public/upload/no_image.jpg') }}"
-                                                style="width: 50px; height: 55px;">
                                         </td>
                                         <td>
                                             <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('posts.edit', $post->id)}}">

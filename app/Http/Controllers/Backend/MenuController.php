@@ -10,7 +10,7 @@ use Auth;
 class MenuController extends Controller
 {
     public function view(){
-        $data['allData'] = Menu::all();
+        $data['allData'] = Menu::orderBy('priority', 'DESC')->get();
 
         return view('backend.menu.view-menu', $data);
     }
@@ -23,12 +23,14 @@ class MenuController extends Controller
         $validatedData = $request->validate([
             'name_bn' => 'required|unique:menus',
             'name_en' => 'required|unique:menus',
+            'priority' => 'required',
             'status' => 'required',
         ]);
         $menu = new Menu();
         $menu->name_bn = $request->name_bn;
         $menu->name_en = $request->name_en;
         $menu->status = $request->status;
+        $menu->priority = $request->priority;
         $menu->created_by = Auth::user()->id;
         $menu->save();
 
@@ -42,14 +44,11 @@ class MenuController extends Controller
     }
 
     public function update(Request $request, $id){
-        $validatedData = $request->validate([
-            'name_bn' => 'required|unique:menus',
-            'name_en' => 'required|unique:menus',
-            'status' => 'required',
-        ]);
+        
         $menu = Menu::find($id);
         $menu->name_bn = $request->name_bn;
         $menu->name_en = $request->name_en;
+        $menu->priority = $request->priority;
         $menu->status = $request->status;
         $menu->updated_by = Auth::user()->id;
         $menu->save();

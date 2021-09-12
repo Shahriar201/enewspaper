@@ -57,7 +57,7 @@
 
                                     <div class="form-row">
 
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-6">
                                             <label for="name">Name Bangla</label>
                                             <input type="text" name="name_bn" value="{{ @$editData->name_bn }}"
                                                 class="form-control form-control-sm">
@@ -66,7 +66,7 @@
                                             </font>
                                         </div>
 
-                                        <div class="form-group col-md-4">
+                                        <div class="form-group col-md-6">
                                             <label for="name">Name English</label>
                                             <input type="text" name="name_en" value="{{ @$editData->name_en }}"
                                                 class="form-control form-control-sm">
@@ -75,6 +75,14 @@
                                             </font>
                                         </div>
 
+                                        <div class="form-group col-md-4">
+                                            <label for="priority">Priority</label>
+                                            <input type="text" name="priority" id="priority" value="{{ @$editData->priority }}" class="form-control form-control-sm">
+                                            <font style="color:red">
+                                                {{ $errors->has('priority') ? $errors->first('priority') : '' }}
+                                            </font>
+                                        </div>
+                                        
                                         <div class="form-group col-md-4">
                                             <label for="action">Status</label>
                                             <select name="status" id="status" class="form-control form-control-sm">
@@ -89,7 +97,7 @@
                                             </font>
                                         </div>
 
-                                        <div class="form-group col-md-6">
+                                        <div class="form-group col-md-4" style="padding-top: 30px">
                                             <input type="submit" value="{{ @$editData ? 'Update' : 'Submit' }}"
                                                 class="btn btn-primary btn-sm">
                                         </div>
@@ -125,6 +133,9 @@
                         required: true,
                     },
                     name_en: {
+                        required: true,
+                    },
+                    priority: {
                         required: true,
                     },
                     status: {

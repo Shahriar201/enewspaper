@@ -13,7 +13,7 @@ class FrontendController extends Controller
 {
     public function index(){
         $data['logo'] = Logo::first();
-        $data['menues'] = Menu::where('status', '0')->get();
+        $data['menues'] = Menu::where('status', '0')->orderBy('priority', 'DESC')->get();
         $data['districts'] = District::where('status', '0')->get();
         $data['posts'] = Post::where('status', '0')->get();
         

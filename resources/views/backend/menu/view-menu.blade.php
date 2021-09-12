@@ -51,6 +51,7 @@
                                             <th>SL.</th>
                                             <th>Bangla Name</th>
                                             <th>English Name</th>
+                                            <th>Priority</th>
                                             <th>Status</th>
                                             <th>Action</th>
                                         </tr>
@@ -67,6 +68,7 @@
                                                 <td>{{ $key + 1 }}</td>
                                                 <td>{{ $menu->name_bn }}</td>
                                                 <td>{{ $menu->name_en }}</td>
+                                                <td>{{ $menu->priority }}</td>
                                                 <td>
                                                     <button id="{{ $menu->id }}" class="btn btn-basic"
                                                         style="background-color:#faebd700;color:#3e5569"

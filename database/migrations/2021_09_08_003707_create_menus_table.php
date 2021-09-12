@@ -17,6 +17,7 @@ class CreateMenusTable extends Migration
             $table->id();
             $table->string('name_bn')->nullable();
             $table->string('name_en')->nullable();
+            $table->integer('priority')->nullable();
             $table->string('status')->nullable();
             $table->integer('created_by')->nullable();
             $table->integer('updated_by')->nullable();
