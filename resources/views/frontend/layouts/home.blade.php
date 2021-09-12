@@ -13,7 +13,7 @@
                                 @foreach ($posts as $post)
                                     <div class="secOne_newsContent">
                                         <div class="sec-one-image">
-                                            <a href="">
+                                            <a href="{{ route('single.post', $post->title) }}">
                                                 <img class="lazyload" src="{{ asset('public/upload/post_images/' .$post->image) }}"
                                                     data-src="{{ url('public/upload/post_images/' . $post->image) }}"
                                                     {{-- alt="{!! $post->title !!}" title="{!! $post->title !!}"  --}}

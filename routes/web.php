@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Frontend\FrontendController@index');
+Route::get('/single-post/{title}', 'Frontend\FrontendController@singlePost')->name('single.post');
 Route::get('menu-national', 'Frontend\FrontendController@nationalMenu')->name('national.menu.view');
 
 Auth::routes(['register' => false]);

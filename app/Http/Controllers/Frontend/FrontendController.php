@@ -20,11 +20,14 @@ class FrontendController extends Controller
         return view('frontend.layouts.home', $data);
     }
 
-    // public function menu(){
-    //     $data['menues'] = Menu::all();
+    public function singlePost($title){
+        $data['post'] = Post::where('title', $title)->first();
+        $data['logo'] = Logo::first();
+        $data['menues'] = Menu::where('status', '0')->orderBy('priority', 'DESC')->get();
+        $data['districts'] = District::where('status', '0')->get();
         
-    //     return view('frontend.layouts.menu', $data);
-    // }
+        return view('frontend.layouts.single_post.index', $data);
+    }
 
     public function nationalMenu(){
         $data['logo'] = Logo::first();
