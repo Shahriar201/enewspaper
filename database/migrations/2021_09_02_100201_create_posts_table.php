@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->integer('category_id');
             $table->integer('district_id');
             $table->integer('menu_id');
-            $table->string('title');
+            $table->longText('title');
             $table->longText('name_bn')->nullable();
             $table->longText('name_en');
             // $table->string('slug')->nullabe();

@@ -67,7 +67,7 @@
 
                                 <img src="{{ url('public/upload/post_images/' .$post->image) }}"
                                     alt=""
-                                    title="{!! $post->title !!}">
+                                    title="{!! $post->name_bn !!}">
                                 <span>
                                     File Pic
                                 </span>

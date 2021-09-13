@@ -33,7 +33,7 @@ class PostController extends Controller
             'category_id' => 'required',
             'district_id' => 'required',
             'menu_id' => 'required',
-            'title' => 'required',
+            'title' => 'required|unique:posts',
             'name_bn' => 'required',
             'name_en' => 'required',
             'status' => 'required',

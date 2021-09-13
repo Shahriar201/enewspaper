@@ -13,22 +13,22 @@
                                 @foreach ($posts as $post)
                                     <div class="secOne_newsContent">
                                         <div class="sec-one-image">
-                                            <a href="{{ route('single.post', $post->title) }}">
+                                            <a href="{!! route('single.post', $post->id) !!}">
                                                 <img class="lazyload" src="{{ asset('public/upload/post_images/' .$post->image) }}"
                                                     data-src="{{ url('public/upload/post_images/' . $post->image) }}"
-                                                    {{-- alt="{!! $post->title !!}" title="{!! $post->title !!}"  --}}
+                                                    alt="{!! $post->title !!}" title="{!! $post->title !!}" 
                                                     />
                                                 </a>
 
                                             <div class="sec-small-cat">
-                                                {{-- <a href="{{ route('post.wise.product', $post->id) }}"> --}}
+                                                {{-- <a href="{!! route('single.post', $post->title) !!}"> --}}
                                                 বিনোদন
                                                 </a>
                                             </div>
 
 
                                             <h1 class="sec-one-title">
-                                                <a href="">
+                                                <a href="{!! route('single.post', $post->id) !!}">
                                                     {!! $post->title !!}
 
                                                 </a>
@@ -56,7 +56,7 @@
                                     <div class="sec-one-wrpp">
                                         <div class="secOne-news">
                                             <div class="secOne-sub-image">
-                                                <a href="">
+                                                <a href="{{ route('single.post', $post->id) }}">
                                                     <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                         data-src="{{ url('public/upload/post_images/' . $post->image) }}"
                                                         {{-- alt="{!! $post->title !!}" title="{!! $post->title !!}"  --}}
@@ -65,7 +65,7 @@
 
                                             </div>
                                             <h4 class="secOne-subTitle">
-                                                <a href="">
+                                                <a href="{{ route('single.post', $post->id) }}">
                                                     {!! $post->title !!}
 
                                                 </a>
@@ -101,14 +101,14 @@
 
                                 <div class="secOne-smallItem">
                                     <div class="secOne-smallImg">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $random->id) }}">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $random->image) }}"
                                                 {{-- alt="{!! $random->title !!}" title="{!! $random->title !!}"  --}}
                                                 /></a>
 
                                         <div class="sec-small-cat1">
-                                            <a href="#">
+                                            <a href="{{ route('single.post', $random->id) }}">
                                                 {{ $random['menu']['name_bn'] }}
                                             </a>
                                         </div>
@@ -116,7 +116,7 @@
 
 
                                         <h5 class="secOne_mallTitle">
-                                            <a href="">
+                                            <a href="{{ route('single.post', $random->id) }}">
                                                 {!! $random->title !!}
 
                                             </a>
@@ -142,7 +142,7 @@
                             <div class="sec-one-wrpp2">
                                 <div class="secOne-news">
                                     <div class="secOne-sub-image">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $random->id) }}">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $random->image) }}"
                                                 {{-- alt="{!! $random->title !!}" title="{!! $random->title !!}"  --}}
@@ -151,7 +151,7 @@
 
                                     </div>
                                     <h4 class="secOne-subTitle">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $random->id) }}">
                                             {!! $random->title !!}
 
                                         </a>
@@ -312,13 +312,13 @@
 
                                 @foreach ($last_posts as $last_post)
                                     <div class="tab-image tab-border">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $last_post->id) }}">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $last_post->image) }}"
                                                 {{-- alt="{!! $last_post->title !!}" title="{!! $last_post->title !!}" --}}
                                                  /></a>
 
-                                        <h4 class="tab_hadding"><a href="">
+                                        <h4 class="tab_hadding"><a href="{{ route('single.post', $last_post->id) }}">
                                                 {!! $last_post->title !!}
 
                                             </a></h4>
@@ -346,14 +346,14 @@
 
                                 @foreach ($last_posts as $popular_post)
                                     <div class="tab-image tab-border">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $popular_post->id) }}">
                                             <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                                 data-src="{{ url('public/upload/post_images/' . $popular_post->image) }}"
                                                 {{-- alt="{!! $popular_post->title !!}" title="{!! $popular_post->title !!}" --}}
                                                  /></a>
 
 
-                                        <h4 class="tab_hadding"><a href="">
+                                        <h4 class="tab_hadding"><a href="{{ route('single.post', $popular_post->id) }}">
                                                 {!! $popular_post->title !!}
 
                                             </a></h4>
@@ -421,7 +421,7 @@
                     <div class="white-bg">
                         <div class="secFour-image">
                             @foreach ($national_posts as $national)
-                                <a href="">
+                                <a href="{{ route('single.post', $national->id) }}">
                                     <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                         data-src="{{ url('public/upload/post_images/' . $national->image) }}"
                                         {{-- alt="{!! $national->title !!}" title="{!! $national->title !!}"  --}}
@@ -430,7 +430,7 @@
                                 <a href="" class="video-icon3"><i class="fa fa-play"></i></a>
 
                                 <div class="secFour-title">
-                                    <a href="">
+                                    <a href="{{ route('single.post', $national->id) }}">
                                         {!! $national->title !!}
                                     </a>
                                 </div>
@@ -450,7 +450,7 @@
                         @foreach ($national_sub_posts as $national_sub_post)
                             <div class="secFour-smallItem">
                                 <div class="secFour-smallImg">
-                                    <a href="">
+                                    <a href="{{ route('single.post', $national_sub_post->id) }}">
                                         <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                             data-src="{{ url('public/upload/post_images/' . $national_sub_post->image) }}"
                                             {{-- alt="{!! $national_sub_post->title !!}" title="{!! $national_sub_post->title !!}" --}}
@@ -459,7 +459,7 @@
 
 
                                     <h5 class="secFour_mallTitle">
-                                        <a href="">
+                                        <a href="{{ route('single.post', $national_sub_post->id) }}">
                                             {!! $national_sub_post->title !!}
                                         </a>
                                     </h5>
@@ -496,7 +496,7 @@
                             @foreach ($international_posts as $international)
 
                             @endforeach
-                            <a href="">
+                            <a href="{{ route('single.post', $international->id) }}">
                                 <img class="lazyload" {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                     data-src="{{ url('public/upload/post_images/' . $international->image) }}"
                                     {{-- alt="{!! $international->title !!}" title="{!! $international->title !!}" --}}
@@ -505,7 +505,7 @@
 
                             <div class="secFour-title">
                                 <a
-                                    href="view-post/75/%e0%a7%ab%e0%a7%a6-%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%9c%e0%a6%a8%e0%a6%b8%e0%a6%82%e0%a6%96%e0%a7%8d%e0%a6%af%e0%a6%be-%e0%a6%b8%e0%a6%ac%e0%a6%9a%e0%a7%87%e0%a7%9f%e0%a7%87-%e0%a6%95%e0%a6%ae%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%9a%e0%a7%80%e0%a6%a8%e0%a7%87.html">
+                                    href="{{ route('single.post', $international->id) }}">
                                     {!! $international->title !!}
                                 </a>
                             </div>
@@ -525,7 +525,7 @@
                         <div class="secFour-smallItem">
                             <div class="secFour-smallImg">
                                 <a
-                                    href="">
+                                    href="{{ route('single.post', $international_sub_post->id) }}">
                                     <img class="lazyload"
                                         {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                         data-src="{{ url('public/upload/post_images/' .$international_sub_post->image) }}"
@@ -537,7 +537,7 @@
 
                                 <h5 class="secFour_mallTitle">
                                     <a
-                                        href="">
+                                        href="{{ route('single.post', $international_sub_post->id) }}">
                                         {!! $international_sub_post->title !!}
                                     </a>
                                 </h5>
@@ -572,7 +572,7 @@
                         @foreach ($politics as $politic)
                         <div class="secFour-image">
                             <a
-                                href="">
+                                href="{{ route('single.post', $politic->id) }}">
                                 <img class="lazyload"
                                     {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                     data-src="{{ url('public/upload/post_images/' .$politic->image) }}"
@@ -583,7 +583,7 @@
 
                             <div class="secFour-title">
                                 <a
-                                    href="">
+                                    href="{{ route('single.post', $politic->id) }}">
                                     {!! $politic->title !!}
                                 </a>
                             </div>
@@ -602,7 +602,7 @@
                         <div class="secFour-smallItem">
                             <div class="secFour-smallImg">
                                 <a
-                                    href="">
+                                    href="{{ route('single.post', $politic_sub->id) }}">
                                     <img class="lazyload"
                                         {{-- src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" --}}
                                         data-src="{{ url('public/upload/post_images/' .$politic_sub->image) }}"
@@ -616,7 +616,7 @@
 
                                 <h5 class="secFour_mallTitle">
                                     <a
-                                        href="">
+                                        href="{{ route('single.post', $politic_sub->id) }}">
                                         {!! $politic_sub->title !!}
                                     </a>
                                 </h5>
@@ -1464,9 +1464,9 @@
                             <div class="secThree-bg">
                                 <div class="sec-theee-image">
                                     <a
-                                        href="view-post/153/%e0%a6%9a%e0%a6%9f%e0%a7%8d%e0%a6%9f%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a7%8b%e0%a6%a5%e0%a6%be%e0%a7%9f-%e0%a6%95%e0%a6%96%e0%a6%a8-%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%9c%e0%a6%be%e0%a6%ae%e0%a6%be%e0%a6%a4.html">
+                                        {{-- href="{{ route('single.post', $politic_sub->title) }}"> --}}
                                         <img class="lazyload"
-                                            src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
+                                            {{-- src="{{ url('public/upload/post_images/' .$all_post->image) }}" --}}
                                             data-src="https://themebazar.xyz/laraflash/public/postimages/609d3c5a6ebf5.png"
                                             alt="চট্টগ্রামের কোথায় কখন ঈদের জামাত"
                                             title="চট্টগ্রামের কোথায় কখন ঈদের জামাত" />

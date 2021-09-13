@@ -20,8 +20,8 @@ class FrontendController extends Controller
         return view('frontend.layouts.home', $data);
     }
 
-    public function singlePost($title){
-        $data['post'] = Post::where('title', $title)->first();
+    public function singlePost($id){
+        $data['post'] = Post::where('id', $id)->first();
         $data['logo'] = Logo::first();
         $data['menues'] = Menu::where('status', '0')->orderBy('priority', 'DESC')->get();
         $data['districts'] = District::where('status', '0')->get();
