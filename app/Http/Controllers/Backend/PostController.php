@@ -23,7 +23,7 @@ class PostController extends Controller
         $data['categories'] = Category::where('status', '0')->get();
         // $data['categories'] = Category::select('name_en')->where('status', '0')->get();
         $data['districts'] = District::where('status', '0')->get();
-        $data['menues'] = Menu::where('status', '0')->get();
+        $data['menues'] = Menu::all();
 
         return view('backend.post.add-post', $data);
     }
