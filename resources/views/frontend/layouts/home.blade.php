@@ -4245,92 +4245,67 @@
                     </div>
 
                     <div class="white-bg">
-                        <div class="secFour-image">
-                            <a
-                                href="view-post/112/%e0%a6%b6%e0%a6%96%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%b6%e0%a7%87-%e0%a6%b0%e0%a6%bf%e0%a6%9f-%e0%a6%95%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%a8-%e0%a6%a8%e0%a6%be%2c-%e0%a6%87%e0%a6%89%e0%a6%a8%e0%a7%81%e0%a6%9b-%e0%a6%86%e0%a6%b2%e0%a7%80%e0%a6%95%e0%a7%87-%e0%a6%b9%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%8b%e0%a6%b0%e0%a7%8d%e0%a6%9f.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608abf5b64a98.png"
-                                    alt="শখের বশে রিট করবেন না, ইউনুছ আলীকে হাইকোর্ট"
-                                    title="শখের বশে রিট করবেন না, ইউনুছ আলীকে হাইকোর্ট" />
-                            </a>
-
-                            <div class="secFour-title">
-                                <a
-                                    href="view-post/112/%e0%a6%b6%e0%a6%96%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%b6%e0%a7%87-%e0%a6%b0%e0%a6%bf%e0%a6%9f-%e0%a6%95%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%a8-%e0%a6%a8%e0%a6%be%2c-%e0%a6%87%e0%a6%89%e0%a6%a8%e0%a7%81%e0%a6%9b-%e0%a6%86%e0%a6%b2%e0%a7%80%e0%a6%95%e0%a7%87-%e0%a6%b9%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%8b%e0%a6%b0%e0%a7%8d%e0%a6%9f.html">
-                                    শখের বশে রিট করবেন না, ইউনুছ আলীকে হাইকোর্ট
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/109/%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%85%e0%a6%a7%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%b7%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%95%e0%a6%b0%e0%a6%be%e0%a6%ae-%e0%a6%b9%e0%a7%8b%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%a8-%e0%a6%a6%e0%a7%81%e0%a6%87-%e0%a6%a6%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b0%e0%a6%bf%e0%a6%ae%e0%a6%be%e0%a6%a8%e0%a7%8d%e0%a6%a1%e0%a7%87.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608abe40d51ee.png"
-                                        alt="ছাত্র অধিকার পরিষদের আকরাম হোসাইন দুই দিনের রিমান্ডে"
-                                        title="ছাত্র অধিকার পরিষদের আকরাম হোসাইন দুই দিনের রিমান্ডে" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        
+                        <div class="laws-main">
+                            @php
+                                $laws = App\Model\Post::where('status', 0)
+                                    ->where('menu_id', 14)
+                                    ->orderBy('id', 'DESC')
+                                    ->limit(1)
+                                    ->get()
+                            @endphp
+                            @foreach ($laws as $law)
+                                <div class="secFour-image">
                                     <a
-                                        href="view-post/109/%e0%a6%9b%e0%a6%be%e0%a6%a4%e0%a7%8d%e0%a6%b0-%e0%a6%85%e0%a6%a7%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%b7%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%95%e0%a6%b0%e0%a6%be%e0%a6%ae-%e0%a6%b9%e0%a7%8b%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%a8-%e0%a6%a6%e0%a7%81%e0%a6%87-%e0%a6%a6%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b0%e0%a6%bf%e0%a6%ae%e0%a6%be%e0%a6%a8%e0%a7%8d%e0%a6%a1%e0%a7%87.html">
-                                        ছাত্র অধিকার পরিষদের আকরাম হোসাইন দুই দিনের রিমান্ডে
+                                        href="{{ route('single.post', $law->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$law->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608abf5b64a98.png" --}}
+                                            alt="{!! $law->title !!}"
+                                            title="{!! $law->title !!}" />
                                     </a>
-                                </h5>
-                            </div>
+        
+                                    <div class="secFour-title">
+                                        <a
+                                            href="{{ route('single.post', $law->id) }}">
+                                            {!! $law->title !!}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/108/%e0%a7%a8%e0%a7%a9-%e0%a6%ac%e0%a6%9b%e0%a6%b0-%e0%a6%aa%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4-%e0%a6%b9%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87%e0%a6%a8-%e0%a6%aa%e0%a6%9f%e0%a7%81%e0%a7%9f%e0%a6%be%e0%a6%96%e0%a6%be%e0%a6%b2%e0%a7%80%e0%a6%b0-%e0%a6%ae%e0%a6%be%e0%a6%a8%e0%a6%bf%e0%a6%95.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608abd240dbec.png"
-                                        alt="২৩ বছর পর কারামুক্ত হচ্ছেন পটুয়াখালীর মানিক"
-                                        title="২৩ বছর পর কারামুক্ত হচ্ছেন পটুয়াখালীর মানিক" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        @php
+                            $laws = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 14)
+                                ->orderBy('id', 'DESC')
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($laws as $law_sub)
+                            <div class="secFour-smallItem">
+                                <div class="secFour-smallImg">
                                     <a
-                                        href="view-post/108/%e0%a7%a8%e0%a7%a9-%e0%a6%ac%e0%a6%9b%e0%a6%b0-%e0%a6%aa%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%be%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4-%e0%a6%b9%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87%e0%a6%a8-%e0%a6%aa%e0%a6%9f%e0%a7%81%e0%a7%9f%e0%a6%be%e0%a6%96%e0%a6%be%e0%a6%b2%e0%a7%80%e0%a6%b0-%e0%a6%ae%e0%a6%be%e0%a6%a8%e0%a6%bf%e0%a6%95.html">
-                                        ২৩ বছর পর কারামুক্ত হচ্ছেন পটুয়াখালীর মানিক
+                                        href="{{ route('single.post', $law_sub->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/', $law_sub->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608abe40d51ee.png" --}}
+                                            alt="{!! $law_sub->title !!}"
+                                            title="{!! $law_sub->title !!}" />
                                     </a>
-                                </h5>
+
+
+                                    <h5 class="secFour_mallTitle">
+                                        <a
+                                            href="{{ route('single.post', $law_sub->id) }}">
+                                            {!! $law_sub->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/103/%e0%a6%b8%e0%a7%81%e0%a6%a8%e0%a6%bf%e0%a6%b0%e0%a7%8d%e0%a6%a6%e0%a6%bf%e0%a6%b7%e0%a7%8d%e0%a6%9f-%e0%a6%ac%e0%a6%bf%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95-%e0%a6%8f%e0%a6%96%e0%a6%a4%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%b9%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%8b%e0%a6%b0%e0%a7%8d%e0%a6%9f%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%aa%e0%a6%9f%e0%a6%bf-%e0%a6%ac%e0%a7%87%e0%a6%9e%e0%a7%8d%e0%a6%9a-%e0%a6%97%e0%a6%a0%e0%a6%a8.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608aba1d568ff.png"
-                                        alt="সুনির্দিষ্ট বিচারিক এখতিয়ার দিয়ে হাইকোর্টে আরও ৪টি বেঞ্চ গঠন"
-                                        title="সুনির্দিষ্ট বিচারিক এখতিয়ার দিয়ে হাইকোর্টে আরও ৪টি বেঞ্চ গঠন" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
-                                    <a
-                                        href="view-post/103/%e0%a6%b8%e0%a7%81%e0%a6%a8%e0%a6%bf%e0%a6%b0%e0%a7%8d%e0%a6%a6%e0%a6%bf%e0%a6%b7%e0%a7%8d%e0%a6%9f-%e0%a6%ac%e0%a6%bf%e0%a6%9a%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95-%e0%a6%8f%e0%a6%96%e0%a6%a4%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%b9%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%8b%e0%a6%b0%e0%a7%8d%e0%a6%9f%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%aa%e0%a6%9f%e0%a6%bf-%e0%a6%ac%e0%a7%87%e0%a6%9e%e0%a7%8d%e0%a6%9a-%e0%a6%97%e0%a6%a0%e0%a6%a8.html">
-                                        সুনির্দিষ্ট বিচারিক এখতিয়ার দিয়ে হাইকোর্টে আরও ৪টি বেঞ্চ গঠন
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
-
-
+                        @endforeach
+                        
                     </div>
 
                 </div>
