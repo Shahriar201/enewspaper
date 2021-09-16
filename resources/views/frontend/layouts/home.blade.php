@@ -4348,136 +4348,36 @@
                         <span class="themeBazar"></span>
                     </div>
 
+                    @php
+                        $healths = App\Model\Post::where('status', 0)
+                            ->where('menu_id', 15)
+                            ->orderBy('id', 'DESC')
+                            ->get()
+                    @endphp
+
                     <div class="secFive-slider owl-carousel">
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/125/%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%bf%e0%a6%a4%e0%a7%87%e0%a6%87-%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a5%e0%a6%ae%e0%a6%bf%e0%a6%95-%e0%a6%9a%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a7%8e%e0%a6%b8%e0%a6%be-%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%ad%e0%a6%ac-_-%e0%a6%a1%e0%a6%be.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac4ec23e99.png"
-                                        alt="বাড়িতেই করোনার প্রাথমিক চিকিৎসা সম্ভব : ডা. জাফরুল্লাহ"
-                                        title="বাড়িতেই করোনার প্রাথমিক চিকিৎসা সম্ভব : ডা. জাফরুল্লাহ" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
+                        @foreach ($healths as $health)
+                            <div class="secFive-wrpp2 bg-3">
+                                <div class="secFive-image2">
                                     <a
-                                        href="view-post/125/%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%bf%e0%a6%a4%e0%a7%87%e0%a6%87-%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a5%e0%a6%ae%e0%a6%bf%e0%a6%95-%e0%a6%9a%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a7%8e%e0%a6%b8%e0%a6%be-%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%ad%e0%a6%ac-_-%e0%a6%a1%e0%a6%be.html">
-                                        বাড়িতেই করোনার প্রাথমিক চিকিৎসা সম্ভব : ডা. জাফরুল্লাহ
+                                        href="{{ route('single.post', $health->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$health->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac4ec23e99.png" --}}
+                                            alt="{!! $health->title !!}"
+                                            title="{!! $health->title !!}" />
                                     </a>
-                                </h5>
+
+
+                                    <h5 class="secFive-title2">
+                                        <a
+                                            href="{{ route('single.post', $health->id) }}">
+                                            {!! $health->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/123/%e0%a6%86%e0%a6%ae%e0%a6%b0%e0%a6%be-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af-%e0%a6%96%e0%a6%be%e0%a6%a4%e0%a6%95%e0%a7%87-%e0%a6%97%e0%a7%81%e0%a6%b0%e0%a7%81%e0%a6%a4%e0%a7%8d%e0%a6%ac-%e0%a6%a6%e0%a7%87%e0%a6%87%e0%a6%a8%e0%a6%bf-_-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac399a1a30.png"
-                                        alt="আমরা স্বাস্থ্য খাতকে গুরুত্ব দেইনি : স্বাস্থ্যমন্ত্রী"
-                                        title="আমরা স্বাস্থ্য খাতকে গুরুত্ব দেইনি : স্বাস্থ্যমন্ত্রী" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/123/%e0%a6%86%e0%a6%ae%e0%a6%b0%e0%a6%be-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af-%e0%a6%96%e0%a6%be%e0%a6%a4%e0%a6%95%e0%a7%87-%e0%a6%97%e0%a7%81%e0%a6%b0%e0%a7%81%e0%a6%a4%e0%a7%8d%e0%a6%ac-%e0%a6%a6%e0%a7%87%e0%a6%87%e0%a6%a8%e0%a6%bf-_-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80.html">
-                                        আমরা স্বাস্থ্য খাতকে গুরুত্ব দেইনি : স্বাস্থ্যমন্ত্রী
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/120/%e0%a6%ac%e0%a6%bf%e0%a6%8f%e0%a6%b8%e0%a6%8f%e0%a6%ae%e0%a6%8f%e0%a6%ae%e0%a6%87%e0%a6%89%e0%a6%a4%e0%a7%87-%e0%a6%97%e0%a6%ac%e0%a7%87%e0%a6%b7%e0%a6%a3%e0%a6%be-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%ae-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%be%e0%a6%a8%e0%a7%8b%e0%a6%b0-%e0%a6%a4%e0%a6%be%e0%a6%97%e0%a6%bf%e0%a6%a6-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80%e0%a6%b0.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac29e2eeff.png"
-                                        alt="বিএসএমএমইউতে গবেষণা কার্যক্রম বাড়ানোর তাগিদ স্বাস্থ্যমন্ত্রীর"
-                                        title="বিএসএমএমইউতে গবেষণা কার্যক্রম বাড়ানোর তাগিদ স্বাস্থ্যমন্ত্রীর" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/120/%e0%a6%ac%e0%a6%bf%e0%a6%8f%e0%a6%b8%e0%a6%8f%e0%a6%ae%e0%a6%8f%e0%a6%ae%e0%a6%87%e0%a6%89%e0%a6%a4%e0%a7%87-%e0%a6%97%e0%a6%ac%e0%a7%87%e0%a6%b7%e0%a6%a3%e0%a6%be-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%ae-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%be%e0%a6%a8%e0%a7%8b%e0%a6%b0-%e0%a6%a4%e0%a6%be%e0%a6%97%e0%a6%bf%e0%a6%a6-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80%e0%a6%b0.html">
-                                        বিএসএমএমইউতে গবেষণা কার্যক্রম বাড়ানোর তাগিদ স্বাস্থ্যমন্ত্রীর
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/117/%e0%a6%9f%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a7%8d%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%80%e0%a7%9f-%e0%a6%a1%e0%a7%8b%e0%a6%9c-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%be%e0%a6%a8%e0%a7%87-%e0%a6%af%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a6%95%e0%a6%bf%e0%a6%9b%e0%a7%81-%e0%a6%ad%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%95%e0%a6%b8%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b6%e0%a6%a8-%e0%a6%b8%e0%a7%87%e0%a6%a8%e0%a7%8d%e0%a6%9f%e0%a6%be%e0%a6%b0.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac189587d3.png"
-                                        alt="টিকার দ্বিতীয় ডোজ প্রদানে যুক্ত আরও কিছু ভ্যাকসিনেশন সেন্টার"
-                                        title="টিকার দ্বিতীয় ডোজ প্রদানে যুক্ত আরও কিছু ভ্যাকসিনেশন সেন্টার" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/117/%e0%a6%9f%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a7%8d%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%80%e0%a7%9f-%e0%a6%a1%e0%a7%8b%e0%a6%9c-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%be%e0%a6%a8%e0%a7%87-%e0%a6%af%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a6%95%e0%a6%bf%e0%a6%9b%e0%a7%81-%e0%a6%ad%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%95%e0%a6%b8%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b6%e0%a6%a8-%e0%a6%b8%e0%a7%87%e0%a6%a8%e0%a7%8d%e0%a6%9f%e0%a6%be%e0%a6%b0.html">
-                                        টিকার দ্বিতীয় ডোজ প্রদানে যুক্ত আরও কিছু ভ্যাকসিনেশন সেন্টার
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/115/%e0%a6%b8%e0%a6%a0%e0%a6%bf%e0%a6%95%e0%a6%ad%e0%a6%be%e0%a6%ac%e0%a7%87-%e0%a6%ae%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%95-%e0%a6%a8%e0%a6%be-%e0%a6%aa%e0%a6%b0%e0%a6%b2%e0%a7%87-%e0%a6%9d%e0%a7%81%e0%a6%81%e0%a6%95%e0%a6%bf-%e0%a6%86%e0%a6%a1%e0%a6%bc%e0%a6%be%e0%a6%87%e0%a6%97%e0%a7%81%e0%a6%a3-%e0%a6%ac%e0%a7%87%e0%a6%b6%e0%a6%bf.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac0bb757e8.png"
-                                        alt="সঠিকভাবে মাস্ক না পরলে ঝুঁকি আড়াইগুণ বেশি"
-                                        title="সঠিকভাবে মাস্ক না পরলে ঝুঁকি আড়াইগুণ বেশি" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/115/%e0%a6%b8%e0%a6%a0%e0%a6%bf%e0%a6%95%e0%a6%ad%e0%a6%be%e0%a6%ac%e0%a7%87-%e0%a6%ae%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%95-%e0%a6%a8%e0%a6%be-%e0%a6%aa%e0%a6%b0%e0%a6%b2%e0%a7%87-%e0%a6%9d%e0%a7%81%e0%a6%81%e0%a6%95%e0%a6%bf-%e0%a6%86%e0%a6%a1%e0%a6%bc%e0%a6%be%e0%a6%87%e0%a6%97%e0%a7%81%e0%a6%a3-%e0%a6%ac%e0%a7%87%e0%a6%b6%e0%a6%bf.html">
-                                        সঠিকভাবে মাস্ক না পরলে ঝুঁকি আড়াইগুণ বেশি
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secFive-wrpp2 bg-3">
-                            <div class="secFive-image2">
-                                <a
-                                    href="view-post/22/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be-%e0%a6%b0%e0%a7%8b%e0%a6%97%e0%a7%80-%e0%a6%86%e0%a6%b8%e0%a6%be-%e0%a6%95%e0%a6%ae%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%87%e0%a6%ac%e0%a6%a8%e0%a7%87-%e0%a6%b8%e0%a6%bf%e0%a6%a8%e0%a6%be-%e0%a6%b9%e0%a6%be%e0%a6%b8%e0%a6%aa%e0%a6%be%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a7%87.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a8bc4986d6.png"
-                                        alt="করোনা রোগী আসা কমেছে ইবনে সিনা হাসপাতালে"
-                                        title="করোনা রোগী আসা কমেছে ইবনে সিনা হাসপাতালে" />
-                                </a>
-
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/22/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be-%e0%a6%b0%e0%a7%8b%e0%a6%97%e0%a7%80-%e0%a6%86%e0%a6%b8%e0%a6%be-%e0%a6%95%e0%a6%ae%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%87%e0%a6%ac%e0%a6%a8%e0%a7%87-%e0%a6%b8%e0%a6%bf%e0%a6%a8%e0%a6%be-%e0%a6%b9%e0%a6%be%e0%a6%b8%e0%a6%aa%e0%a6%be%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a7%87.html">
-                                        করোনা রোগী আসা কমেছে ইবনে সিনা হাসপাতালে
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
+                        @endforeach
 
                     </div>
                 </div>
@@ -4497,125 +4397,76 @@
 
             <div class="row">
                 <div class="col-lg-6 col-md-6">
+                    @php
+                        $foreings = App\Model\Post::where('status', 0)
+                            ->where('menu_id', 16)
+                            ->orderBy('id', 'DESC')
+                            ->limit(1)
+                            ->get()
+                    @endphp 
+                    @foreach ($foreings as $foreign)
+                        <div class="black-bg">
+                            <div class="secSeven-image">
+                                <a
+                                    href="{{ route('single.post', $foreign->id) }}">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$foreign->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac3983d0e8.png" --}}
+                                        alt="{!! $foreign->title !!}"
+                                        title="{!! $foreign->title !!}" />
+                                </a>
 
-                    <div class="black-bg">
-                        <div class="secSeven-image">
-                            <a
-                                href="view-post/122/%e0%a6%aa%e0%a6%95%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%a1%e0%a6%b2%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a7%87%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a7%87%e0%a6%9f%e2%80%99-%e0%a6%b6%e0%a7%80%e0%a6%b0%e0%a7%8d%e0%a6%b7%e0%a6%95-%e0%a6%95%e0%a6%be%e0%a6%a8%e0%a6%be%e0%a6%a1%e0%a6%be%e0%a7%9f-%e0%a6%86%e0%a6%b2%e0%a7%8b%e0%a6%9a%e0%a6%a8%e0%a6%be-%e0%a6%b8%e0%a6%ad%e0%a6%be.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608ac3983d0e8.png"
-                                    alt="পকেটে ডলার দেয়ার বাজেট’ শীর্ষক কানাডায় আলোচনা সভা"
-                                    title="পকেটে ডলার দেয়ার বাজেট’ শীর্ষক কানাডায় আলোচনা সভা" />
-                            </a>
+
+
+                            </div>
+                            <h6 class="secSeven-title">
+                                <a
+                                    href="{{ route('single.post', $foreign->id) }}">
+                                    {!! $foreign->title !!}
+                                </a>
+                            </h6>
 
 
 
                         </div>
-                        <h6 class="secSeven-title">
-                            <a
-                                href="view-post/122/%e0%a6%aa%e0%a6%95%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%a1%e0%a6%b2%e0%a6%be%e0%a6%b0-%e0%a6%a6%e0%a7%87%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a7%87%e0%a6%9f%e2%80%99-%e0%a6%b6%e0%a7%80%e0%a6%b0%e0%a7%8d%e0%a6%b7%e0%a6%95-%e0%a6%95%e0%a6%be%e0%a6%a8%e0%a6%be%e0%a6%a1%e0%a6%be%e0%a7%9f-%e0%a6%86%e0%a6%b2%e0%a7%8b%e0%a6%9a%e0%a6%a8%e0%a6%be-%e0%a6%b8%e0%a6%ad%e0%a6%be.html">
-                                পকেটে ডলার দেয়ার বাজেট’ শীর্ষক কানাডায় আলোচনা সভা
-                            </a>
-                        </h6>
-
-
-
-                    </div>
-
+                    @endforeach
+                    
 
                 </div>
+                
                 <div class="col-lg-6 col-md-6">
                     <div class="secSeven-content">
-
-
-                        <div class="secSeven-wrpp black-bg">
-                            <div class="secSeven-image2">
-                                <a
-                                    href="view-post/121/%e0%a6%ae%e0%a6%be%e0%a6%b2%e0%a6%a6%e0%a7%8d%e0%a6%ac%e0%a7%80%e0%a6%aa-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a%e0%a7%81%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b2-%e0%a6%93%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%95-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a6%ae%e0%a6%bf%e0%a6%9f-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a1-%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%b0%e0%a6%a3-%e0%a6%b6%e0%a7%81%e0%a6%b0%e0%a7%81.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac2f3e24b5.png"
-                                        alt="মালদ্বীপ প্রবাসীদের ভার্চুয়াল ওয়ার্ক পারমিট কার্ড বিতরণ শুরু"
-                                        title="মালদ্বীপ প্রবাসীদের ভার্চুয়াল ওয়ার্ক পারমিট কার্ড বিতরণ শুরু" />
-                                </a>
-
-                                <a href="view-post/121/%e0%a6%ae%e0%a6%be%e0%a6%b2%e0%a6%a6%e0%a7%8d%e0%a6%ac%e0%a7%80%e0%a6%aa-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a%e0%a7%81%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b2-%e0%a6%93%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%95-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a6%ae%e0%a6%bf%e0%a6%9f-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a1-%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%b0%e0%a6%a3-%e0%a6%b6%e0%a7%81%e0%a6%b0%e0%a7%81.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
-                                <h5 class="secFive-title2">
+                        @php
+                            $foreings = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 16)
+                                ->orderBy('id', 'DESC')
+                                ->inRandomOrder()
+                                ->limit(4)
+                                ->get()
+                        @endphp
+                        @foreach ($foreings as $foreign_sub)
+                            <div class="secSeven-wrpp black-bg">
+                                <div class="secSeven-image2">
                                     <a
-                                        href="view-post/121/%e0%a6%ae%e0%a6%be%e0%a6%b2%e0%a6%a6%e0%a7%8d%e0%a6%ac%e0%a7%80%e0%a6%aa-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a%e0%a7%81%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b2-%e0%a6%93%e0%a6%af%e0%a6%bc%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%95-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a6%ae%e0%a6%bf%e0%a6%9f-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a1-%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a6%b0%e0%a6%a3-%e0%a6%b6%e0%a7%81%e0%a6%b0%e0%a7%81.html">
-                                        মালদ্বীপ প্রবাসীদের ভার্চুয়াল ওয়ার্ক পারমিট কার্ড বিতরণ শুরু
+                                        href="{{ route('single.post', $foreign_sub->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$foreign_sub->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac2f3e24b5.png" --}}
+                                            alt="{!! $foreign_sub->title !!}"
+                                            title="{!! $foreign_sub->title !!}" />
                                     </a>
-                                </h5>
+
+                                    <a href="{{ route('single.post', $foreign_sub->id) }}"
+                                        class="video-icon6"><i class="fa fa-play"></i></a>
+                                    <h5 class="secFive-title2">
+                                        <a
+                                            href="{{ route('single.post', $foreign_sub->id) }}">
+                                            {!! $foreign_sub->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secSeven-wrpp black-bg">
-                            <div class="secSeven-image2">
-                                <a
-                                    href="view-post/119/%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%ae%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%87%e0%a6%aa%e0%a6%bf%e0%a6%8f%e0%a6%b8-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%a8%e0%a6%be%e0%a6%a6.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac255c0859.png"
-                                        alt="শ্রমবাজার সুরক্ষায় ইপিএস কর্মীদের আর্তনাদ"
-                                        title="শ্রমবাজার সুরক্ষায় ইপিএস কর্মীদের আর্তনাদ" />
-                                </a>
-
-                                <a href="view-post/119/%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%ae%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%87%e0%a6%aa%e0%a6%bf%e0%a6%8f%e0%a6%b8-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%a8%e0%a6%be%e0%a6%a6.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/119/%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%ae%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be%e0%a7%9f-%e0%a6%87%e0%a6%aa%e0%a6%bf%e0%a6%8f%e0%a6%b8-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b0%e0%a7%8d%e0%a6%a4%e0%a6%a8%e0%a6%be%e0%a6%a6.html">
-                                        শ্রমবাজার সুরক্ষায় ইপিএস কর্মীদের আর্তনাদ
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secSeven-wrpp black-bg">
-                            <div class="secSeven-image2">
-                                <a
-                                    href="view-post/118/%e0%a6%b8%e0%a6%bf%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%be%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a7%87-%e0%a6%b8%e0%a6%b0%e0%a7%8d%e0%a6%ac%e0%a7%8b%e0%a6%9a%e0%a7%8d%e0%a6%9a-%e0%a6%ac%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%bf%e0%a6%b0-%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%87.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac1b4c93c2.png"
-                                        alt="সিঙ্গাপুরে সর্বোচ্চ বিক্রির তালিকায় বাংলাদেশি শ্রমিকের বই"
-                                        title="সিঙ্গাপুরে সর্বোচ্চ বিক্রির তালিকায় বাংলাদেশি শ্রমিকের বই" />
-                                </a>
-
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/118/%e0%a6%b8%e0%a6%bf%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%be%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a7%87-%e0%a6%b8%e0%a6%b0%e0%a7%8d%e0%a6%ac%e0%a7%8b%e0%a6%9a%e0%a7%8d%e0%a6%9a-%e0%a6%ac%e0%a6%bf%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%bf%e0%a6%b0-%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%87.html">
-                                        সিঙ্গাপুরে সর্বোচ্চ বিক্রির তালিকায় বাংলাদেশি শ্রমিকের বই
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-                        <div class="secSeven-wrpp black-bg">
-                            <div class="secSeven-image2">
-                                <a
-                                    href="view-post/24/%e0%a6%87%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a6%bf%e0%a6%b0-%e0%a6%ae%e0%a7%82%e0%a6%b2%e0%a6%a7%e0%a6%be%e0%a6%b0%e0%a6%be%e0%a6%b0-%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a8%e0%a7%80%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%b9%e0%a7%8b%e0%a6%b8%e0%a7%87%e0%a6%a8.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a8c48aa279.png"
-                                        alt="ইতালির মূলধারার রাজনীতিতে বাংলাদেশি মুক্তার হোসেন"
-                                        title="ইতালির মূলধারার রাজনীতিতে বাংলাদেশি মুক্তার হোসেন" />
-                                </a>
-
-                                <a href="view-post/24/%e0%a6%87%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a6%bf%e0%a6%b0-%e0%a6%ae%e0%a7%82%e0%a6%b2%e0%a6%a7%e0%a6%be%e0%a6%b0%e0%a6%be%e0%a6%b0-%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a8%e0%a7%80%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%b9%e0%a7%8b%e0%a6%b8%e0%a7%87%e0%a6%a8.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
-                                <h5 class="secFive-title2">
-                                    <a
-                                        href="view-post/24/%e0%a6%87%e0%a6%a4%e0%a6%be%e0%a6%b2%e0%a6%bf%e0%a6%b0-%e0%a6%ae%e0%a7%82%e0%a6%b2%e0%a6%a7%e0%a6%be%e0%a6%b0%e0%a6%be%e0%a6%b0-%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a8%e0%a7%80%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%b9%e0%a7%8b%e0%a6%b8%e0%a7%87%e0%a6%a8.html">
-                                        ইতালির মূলধারার রাজনীতিতে বাংলাদেশি মুক্তার হোসেন
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
+                        @endforeach
 
                     </div>
                 </div>
@@ -4662,97 +4513,68 @@
                     </div>
 
                     <div class="white-bg">
-                        <div class="secFour-image">
-                            <a
-                                href="view-post/131/%e0%a7%a7-%e0%a6%b9%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%97%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a6%bf-%e0%a6%ac%e0%a7%8b%e0%a6%ae%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%87-%e0%a6%ae%e0%a6%b0%e0%a6%bf%e0%a6%9a%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ae-%e0%a7%a9%e0%a7%a6%e0%a7%a6-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608ac7b0677b8.png"
-                                    alt="১ হাজার সুগন্ধি বোম্বাই মরিচের দাম ৩০০ টাকা"
-                                    title="১ হাজার সুগন্ধি বোম্বাই মরিচের দাম ৩০০ টাকা" />
-                            </a>
-                            <a href="view-post/131/%e0%a7%a7-%e0%a6%b9%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%97%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a6%bf-%e0%a6%ac%e0%a7%8b%e0%a6%ae%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%87-%e0%a6%ae%e0%a6%b0%e0%a6%bf%e0%a6%9a%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ae-%e0%a7%a9%e0%a7%a6%e0%a7%a6-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be.html"
-                                class="video-icon3"><i class="fa fa-play"></i></a>
-
-                            <div class="secFour-title">
-                                <a
-                                    href="view-post/131/%e0%a7%a7-%e0%a6%b9%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0-%e0%a6%b8%e0%a7%81%e0%a6%97%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a6%bf-%e0%a6%ac%e0%a7%8b%e0%a6%ae%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%87-%e0%a6%ae%e0%a6%b0%e0%a6%bf%e0%a6%9a%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ae-%e0%a7%a9%e0%a7%a6%e0%a7%a6-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be.html">
-                                    ১ হাজার সুগন্ধি বোম্বাই মরিচের দাম ৩০০ টাকা
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/129/%e0%a6%af%e0%a7%87-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%a3%e0%a7%87-%27%e0%a6%ab%e0%a6%be%e0%a6%a4%e0%a7%87%e0%a6%ae%e0%a6%be-%e0%a6%a7%e0%a6%be%e0%a6%a8%27-%e0%a6%9a%e0%a6%be%e0%a6%b7-%e0%a6%95%e0%a6%b0%e0%a7%87-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%95-%e0%a6%ab%e0%a6%b2%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8-%e0%a6%a6%e0%a7%87%e0%a6%96%e0%a6%9b%e0%a7%87%e0%a6%a8-%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%9c%e0%a7%81%e0%a6%b2.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac7400a79e.png"
-                                        alt="যে কারণে &#039;ফাতেমা ধান&#039; চাষ করে ব্যাপক ফলনের স্বপ্ন দেখছেন রিয়াজুল"
-                                        title="যে কারণে &#039;ফাতেমা ধান&#039; চাষ করে ব্যাপক ফলনের স্বপ্ন দেখছেন রিয়াজুল" />
-                                </a>
-                                <a href="view-post/129/%e0%a6%af%e0%a7%87-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%a3%e0%a7%87-%27%e0%a6%ab%e0%a6%be%e0%a6%a4%e0%a7%87%e0%a6%ae%e0%a6%be-%e0%a6%a7%e0%a6%be%e0%a6%a8%27-%e0%a6%9a%e0%a6%be%e0%a6%b7-%e0%a6%95%e0%a6%b0%e0%a7%87-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%95-%e0%a6%ab%e0%a6%b2%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8-%e0%a6%a6%e0%a7%87%e0%a6%96%e0%a6%9b%e0%a7%87%e0%a6%a8-%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%9c%e0%a7%81%e0%a6%b2.html"
-                                    class="small-icon4"><i class="fa fa-play"></i></a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        <div class="argi-main">
+                            @php
+                                $argicultural = App\Model\Post::where('status', 0)
+                                    ->where('menu_id', 17)
+                                    ->orderBy('id', 'DESC')
+                                    ->limit(1)
+                                    ->get()
+                            @endphp
+                            @foreach ($argicultural as $agri)
+                                <div class="secFour-image">
                                     <a
-                                        href="view-post/129/%e0%a6%af%e0%a7%87-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%a3%e0%a7%87-%27%e0%a6%ab%e0%a6%be%e0%a6%a4%e0%a7%87%e0%a6%ae%e0%a6%be-%e0%a6%a7%e0%a6%be%e0%a6%a8%27-%e0%a6%9a%e0%a6%be%e0%a6%b7-%e0%a6%95%e0%a6%b0%e0%a7%87-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%aa%e0%a6%95-%e0%a6%ab%e0%a6%b2%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%aa%e0%a7%8d%e0%a6%a8-%e0%a6%a6%e0%a7%87%e0%a6%96%e0%a6%9b%e0%a7%87%e0%a6%a8-%e0%a6%b0%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%9c%e0%a7%81%e0%a6%b2.html">
-                                        যে কারণে &#039;ফাতেমা ধান&#039; চাষ করে ব্যাপক ফলনের স্বপ্ন দেখছেন রিয়াজুল
+                                        href="{{ route('single.post', $agri->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/', $agri->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac7b0677b8.png" --}}
+                                            alt="{!! $agri->title !!}"
+                                            title="{!! $agri->title !!}" />
                                     </a>
-                                </h5>
-                            </div>
+                                    <a href="{{ route('single.post', $agri->id) }}"
+                                        class="video-icon3"><i class="fa fa-play"></i></a>
+        
+                                    <div class="secFour-title">
+                                        <a
+                                            href="{{ route('single.post', $agri->id) }}">
+                                            {!! $agri->title !!}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/128/%e0%a6%ac%e0%a6%bf%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%a4%e0%a6%b0%e0%a6%ae%e0%a7%81%e0%a6%9c-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a7%a8-%e0%a6%b2%e0%a6%be%e0%a6%96-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be-%e0%a6%86%e0%a7%9f%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b6%e0%a6%be-%e0%a6%87%e0%a6%ae%e0%a6%a8%e0%a7%87%e0%a6%b0.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac6d4eb230.png"
-                                        alt="বিদেশি তরমুজ চাষে ২ লাখ টাকা আয়ের আশা ইমনের"
-                                        title="বিদেশি তরমুজ চাষে ২ লাখ টাকা আয়ের আশা ইমনের" />
-                                </a>
-                                <a href="view-post/128/%e0%a6%ac%e0%a6%bf%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%a4%e0%a6%b0%e0%a6%ae%e0%a7%81%e0%a6%9c-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a7%a8-%e0%a6%b2%e0%a6%be%e0%a6%96-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be-%e0%a6%86%e0%a7%9f%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b6%e0%a6%be-%e0%a6%87%e0%a6%ae%e0%a6%a8%e0%a7%87%e0%a6%b0.html"
-                                    class="small-icon4"><i class="fa fa-play"></i></a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        @php
+                            $argicultural = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 17)
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($argicultural as $agri_sub)
+                            <div class="secFour-smallItem">
+                                <div class="secFour-smallImg">
                                     <a
-                                        href="view-post/128/%e0%a6%ac%e0%a6%bf%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a6%bf-%e0%a6%a4%e0%a6%b0%e0%a6%ae%e0%a7%81%e0%a6%9c-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a7%a8-%e0%a6%b2%e0%a6%be%e0%a6%96-%e0%a6%9f%e0%a6%be%e0%a6%95%e0%a6%be-%e0%a6%86%e0%a7%9f%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%b6%e0%a6%be-%e0%a6%87%e0%a6%ae%e0%a6%a8%e0%a7%87%e0%a6%b0.html">
-                                        বিদেশি তরমুজ চাষে ২ লাখ টাকা আয়ের আশা ইমনের
+                                        href="{{ route('single.post', $agri_sub->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$agri_sub->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac7400a79e.png" --}}
+                                            alt="{!! $agri_sub->title !!}"
+                                            title="{!! $agri_sub->title !!}" />
                                     </a>
-                                </h5>
+                                    <a href="{{ route('single.post', $agri_sub->id) }}"
+                                        class="small-icon4"><i class="fa fa-play"></i></a>
+
+
+                                    <h5 class="secFour_mallTitle">
+                                        <a
+                                            href="{{ route('single.post', $agri_sub->id) }}">
+                                            {!! $agri_sub->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/126/%e0%a6%9a%e0%a6%bf%e0%a6%82%e0%a7%9c%e0%a6%bf-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a6%b0%e0%a7%8b%e0%a6%97-%e0%a6%93-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%ac%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a6%be.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac5d09dec3.png"
-                                        alt="চিংড়ি চাষে রোগ ও প্রতিকার ব্যবস্থা"
-                                        title="চিংড়ি চাষে রোগ ও প্রতিকার ব্যবস্থা" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
-                                    <a
-                                        href="view-post/126/%e0%a6%9a%e0%a6%bf%e0%a6%82%e0%a7%9c%e0%a6%bf-%e0%a6%9a%e0%a6%be%e0%a6%b7%e0%a7%87-%e0%a6%b0%e0%a7%8b%e0%a6%97-%e0%a6%93-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%95%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%ac%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a6%be.html">
-                                        চিংড়ি চাষে রোগ ও প্রতিকার ব্যবস্থা
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
-
+                        @endforeach
 
                     </div>
 
@@ -4770,91 +4592,65 @@
                     </div>
 
                     <div class="white-bg">
-                        <div class="secFour-image">
-                            <a
-                                href="view-post/132/%e0%a6%97%e0%a6%a3%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%ac%e0%a6%b9%e0%a6%a8-%e0%a6%9a%e0%a6%be%e0%a6%b2%e0%a7%81-%e0%a6%b9%e0%a6%93%e0%a7%9f%e0%a6%be%e0%a7%9f-%e0%a6%a6%e0%a6%b0%e0%a7%8d%e0%a6%b6%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a5%e0%a7%80-%e0%a6%ac%e0%a7%87%e0%a7%9c%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%ac%e0%a6%87%e0%a6%ae%e0%a7%87%e0%a6%b2%e0%a6%be%e0%a7%9f.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608ac86823ac4.png"
-                                    alt="গণপরিবহন চালু হওয়ায় দর্শনার্থী বেড়েছে বইমেলায়"
-                                    title="গণপরিবহন চালু হওয়ায় দর্শনার্থী বেড়েছে বইমেলায়" />
-                            </a>
-
-                            <div class="secFour-title">
-                                <a
-                                    href="view-post/132/%e0%a6%97%e0%a6%a3%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%ac%e0%a6%b9%e0%a6%a8-%e0%a6%9a%e0%a6%be%e0%a6%b2%e0%a7%81-%e0%a6%b9%e0%a6%93%e0%a7%9f%e0%a6%be%e0%a7%9f-%e0%a6%a6%e0%a6%b0%e0%a7%8d%e0%a6%b6%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%a5%e0%a7%80-%e0%a6%ac%e0%a7%87%e0%a7%9c%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a6%ac%e0%a6%87%e0%a6%ae%e0%a7%87%e0%a6%b2%e0%a6%be%e0%a7%9f.html">
-                                    গণপরিবহন চালু হওয়ায় দর্শনার্থী বেড়েছে বইমেলায়
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/130/%e0%a6%b8%e0%a6%be%e0%a6%a1%e0%a6%bc%e0%a7%87-%e0%a7%a7%e0%a7%a8-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%b2%e0%a6%ad%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%a6%e0%a7%87%e0%a6%ac%e0%a7%87-%e0%a6%8f%e0%a6%a8%e0%a6%86%e0%a6%b0%e0%a6%ac%e0%a6%bf%e0%a6%b8%e0%a6%bf-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%82%e0%a6%95.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac792505b5.png"
-                                        alt="সাড়ে ১২ শতাংশ লভ্যাংশ দেবে এনআরবিসি ব্যাংক"
-                                        title="সাড়ে ১২ শতাংশ লভ্যাংশ দেবে এনআরবিসি ব্যাংক" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        <div class="special-report-main">
+                            @php
+                                $special_reports = App\Model\Post::where('status', 0)
+                                    ->where('menu_id', 18)
+                                    ->orderBy('id', 'DESC')
+                                    ->limit(1)
+                                    ->get()
+                            @endphp
+                            @foreach ($special_reports as $report)
+                                <div class="secFour-image">
                                     <a
-                                        href="view-post/130/%e0%a6%b8%e0%a6%be%e0%a6%a1%e0%a6%bc%e0%a7%87-%e0%a7%a7%e0%a7%a8-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%b2%e0%a6%ad%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%a6%e0%a7%87%e0%a6%ac%e0%a7%87-%e0%a6%8f%e0%a6%a8%e0%a6%86%e0%a6%b0%e0%a6%ac%e0%a6%bf%e0%a6%b8%e0%a6%bf-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%82%e0%a6%95.html">
-                                        সাড়ে ১২ শতাংশ লভ্যাংশ দেবে এনআরবিসি ব্যাংক
+                                        href="{{ route('single.post', $report->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/', $report->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac86823ac4.png" --}}
+                                            alt="{!! $report->title !!}"
+                                            title="{!! $report->title !!}" />
                                     </a>
-                                </h5>
-                            </div>
+        
+                                    <div class="secFour-title">
+                                        <a
+                                            href="{{ route('single.post', $report->id) }}">
+                                            {!! $report->title !!}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
+                            
                         </div>
 
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/127/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a7%87%e0%a6%a4%e0%a6%a8-%e0%a6%95%e0%a6%ae%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a7%a9%e0%a7%ab-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%aa%e0%a7%8b%e0%a6%b6%e0%a6%be%e0%a6%95%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a7%80%e0%a6%b0.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ac6642f8dc.png"
-                                        alt="করোনায় বেতন কমেছে ৩৫ শতাংশ পোশাককর্মীর"
-                                        title="করোনায় বেতন কমেছে ৩৫ শতাংশ পোশাককর্মীর" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        @php
+                            $special_reports = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 18)
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($special_reports as $report_sub)
+                            <div class="secFour-smallItem">
+                                <div class="secFour-smallImg">
                                     <a
-                                        href="view-post/127/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a7%87%e0%a6%a4%e0%a6%a8-%e0%a6%95%e0%a6%ae%e0%a7%87%e0%a6%9b%e0%a7%87-%e0%a7%a9%e0%a7%ab-%e0%a6%b6%e0%a6%a4%e0%a6%be%e0%a6%82%e0%a6%b6-%e0%a6%aa%e0%a7%8b%e0%a6%b6%e0%a6%be%e0%a6%95%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a7%80%e0%a6%b0.html">
-                                        করোনায় বেতন কমেছে ৩৫ শতাংশ পোশাককর্মীর
+                                        href="{{ route('single.post', $report_sub->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$report_sub->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ac792505b5.png" --}}
+                                            alt="{!! $report_sub->title !!}"
+                                            title="{!! $report_sub->title !!}" />
                                     </a>
-                                </h5>
+
+
+                                    <h5 class="secFour_mallTitle">
+                                        <a
+                                            href="{{ route('single.post', $report_sub->id) }}">
+                                            {!! $report_sub->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/27/%e0%a6%a8%e0%a6%95%e0%a6%b2-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%b8%e0%a6%be%e0%a6%a7%e0%a6%a8%e0%a7%80-%e0%a6%a4%e0%a7%88%e0%a6%b0%e0%a6%bf-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0%e0%a6%9c%e0%a6%be%e0%a6%a4-_-%e0%a6%8f-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%ac%e0%a6%b8%e0%a6%be%e0%a7%9f-%e0%a6%af%e0%a7%87%e0%a6%a8-%e0%a6%a4%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%90%e0%a6%a4%e0%a6%bf%e0%a6%b9%e0%a7%8d%e0%a6%af.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a8d009b500.png"
-                                        alt="নকল প্রসাধনী তৈরি-বাজারজাত : এ ব্যবসায় যেন তাদের ঐতিহ্য"
-                                        title="নকল প্রসাধনী তৈরি-বাজারজাত : এ ব্যবসায় যেন তাদের ঐতিহ্য" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
-                                    <a
-                                        href="view-post/27/%e0%a6%a8%e0%a6%95%e0%a6%b2-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%b8%e0%a6%be%e0%a6%a7%e0%a6%a8%e0%a7%80-%e0%a6%a4%e0%a7%88%e0%a6%b0%e0%a6%bf-%e0%a6%ac%e0%a6%be%e0%a6%9c%e0%a6%be%e0%a6%b0%e0%a6%9c%e0%a6%be%e0%a6%a4-_-%e0%a6%8f-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%ac%e0%a6%b8%e0%a6%be%e0%a7%9f-%e0%a6%af%e0%a7%87%e0%a6%a8-%e0%a6%a4%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%90%e0%a6%a4%e0%a6%bf%e0%a6%b9%e0%a7%8d%e0%a6%af.html">
-                                        নকল প্রসাধনী তৈরি-বাজারজাত : এ ব্যবসায় যেন তাদের ঐতিহ্য
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
-
+                        @endforeach
 
                     </div>
 
@@ -4872,91 +4668,65 @@
                     </div>
 
                     <div class="white-bg">
-                        <div class="secFour-image">
-                            <a
-                                href="view-post/84/%e0%a7%a7%e0%a7%af%e0%a7%ad%e0%a7%a7-%e0%a6%b8%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%ab-%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a-_-%e0%a6%ab%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%97%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%b0%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%a1.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aae6d3e5c2.png"
-                                    alt="১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড"
-                                    title="১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড" />
-                            </a>
-
-                            <div class="secFour-title">
-                                <a
-                                    href="view-post/84/%e0%a7%a7%e0%a7%af%e0%a7%ad%e0%a7%a7-%e0%a6%b8%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%b0-%e0%a7%a8%e0%a7%ab-%e0%a6%ae%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%9a-_-%e0%a6%ab%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%97%e0%a7%87%e0%a6%9f%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%b0%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a5%e0%a6%ae-%e0%a6%ac%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a7%87%e0%a6%a1.html">
-                                    ১৯৭১ সালের ২৫ মার্চ : ফার্মগেটে প্রতিরোধের প্রথম ব্যারিকেড
-                                </a>
-                            </div>
-                        </div>
-
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/83/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%a7%e0%a7%80%e0%a6%a8%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%9f-%e0%a6%8f%e0%a6%ac%e0%a6%82-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%9f.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608aae209520e.png"
-                                        alt="নারী স্বাধীনতার বিজয় এবং বাংলাদেশের বিজয়"
-                                        title="নারী স্বাধীনতার বিজয় এবং বাংলাদেশের বিজয়" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        
+                        <div class="editorial-main">
+                            @php
+                                $editorials = App\Model\Post::where('status', 0)
+                                    ->where('menu_id', 19)
+                                    ->orderBy('id', 'DESC')
+                                    ->limit(1)
+                                    ->get()
+                            @endphp
+                            @foreach ($editorials as $editor)
+                                <div class="secFour-image">
                                     <a
-                                        href="view-post/83/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%a7%e0%a7%80%e0%a6%a8%e0%a6%a4%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%9f-%e0%a6%8f%e0%a6%ac%e0%a6%82-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%9f.html">
-                                        নারী স্বাধীনতার বিজয় এবং বাংলাদেশের বিজয়
+                                        href="{{ route('single.post', $editor->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$editor->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608aae6d3e5c2.png" --}}
+                                            alt="{!! $editor->title !!}"
+                                            title="{!! $editor->title !!}" />
                                     </a>
-                                </h5>
-                            </div>
+        
+                                    <div class="secFour-title">
+                                        <a
+                                            href="{{ route('single.post', $editor->id) }}">
+                                            {!! $editor->title !!}
+                                        </a>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
 
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/82/%e0%a6%aa%e0%a7%81%e0%a6%a3%e0%a7%8d%e0%a6%af-%e0%a6%b6%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%be-%e0%a6%97%e0%a7%81%e0%a6%a1-%e0%a6%ab%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%87%e0%a6%a1%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%95%e0%a6%a5%e0%a6%be.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608aadc43ac49.png"
-                                        alt="পুণ্য শুক্রবার বা গুড ফ্রাইডের মর্মকথা"
-                                        title="পুণ্য শুক্রবার বা গুড ফ্রাইডের মর্মকথা" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
+                        @php
+                            $editorials = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 19)
+                                ->inRandomOrder()
+                                ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($editorials as $editor_sub)
+                            <div class="secFour-smallItem">
+                                <div class="secFour-smallImg">
                                     <a
-                                        href="view-post/82/%e0%a6%aa%e0%a7%81%e0%a6%a3%e0%a7%8d%e0%a6%af-%e0%a6%b6%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%ac%e0%a6%be-%e0%a6%97%e0%a7%81%e0%a6%a1-%e0%a6%ab%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%87%e0%a6%a1%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%95%e0%a6%a5%e0%a6%be.html">
-                                        পুণ্য শুক্রবার বা গুড ফ্রাইডের মর্মকথা
+                                        href="{{ route('single.post', $editor_sub->id) }}">
+                                        <img class="lazyload"
+                                            src="{{ url('public/upload/post_images/' .$editor_sub->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608aae209520e.png" --}}
+                                            alt="{!! $editor_sub->title !!}"
+                                            title="{!! $editor_sub->title !!}" />
                                     </a>
-                                </h5>
+
+
+                                    <h5 class="secFour_mallTitle">
+                                        <a
+                                            href="{{ route('single.post', $editor_sub->id) }}">
+                                            {!! $editor_sub->title !!}
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <a
-                                    href="view-post/81/%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%ac%e0%a6%a6%e0%a7%8c%e0%a6%b2%e0%a6%a4%e0%a7%87-%e0%a6%ae%e0%a6%be%e0%a6%ae%e0%a7%81%e0%a6%a8%e0%a7%81%e0%a6%b2-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a3%e0%a7%87-%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be-%e0%a6%aa%e0%a6%be%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87%e0%a6%a8.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608aad7ceb7ba.png"
-                                        alt="বঙ্গবন্ধুর বদৌলতে মামুনুল প্রাণে রক্ষা পাচ্ছেন"
-                                        title="বঙ্গবন্ধুর বদৌলতে মামুনুল প্রাণে রক্ষা পাচ্ছেন" />
-                                </a>
-
-
-                                <h5 class="secFour_mallTitle">
-                                    <a
-                                        href="view-post/81/%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%ac%e0%a6%a6%e0%a7%8c%e0%a6%b2%e0%a6%a4%e0%a7%87-%e0%a6%ae%e0%a6%be%e0%a6%ae%e0%a7%81%e0%a6%a8%e0%a7%81%e0%a6%b2-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a3%e0%a7%87-%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be-%e0%a6%aa%e0%a6%be%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87%e0%a6%a8.html">
-                                        বঙ্গবন্ধুর বদৌলতে মামুনুল প্রাণে রক্ষা পাচ্ছেন
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
-
+                        @endforeach
 
                     </div>
 

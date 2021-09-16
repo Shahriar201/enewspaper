@@ -65,9 +65,9 @@
 
                                     <tr class="{{ $post->id }}">
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $post['category']['name_bn'] }}</td>
-                                        <td>{{ $post['district']['name_bn'] }}</td>
-                                        <td>{!! $post['menu']['name_bn'] !!}</td>
+                                        <td>{{ $post['category']['name_en'] }}</td>
+                                        <td>{{ $post['district']['name_en'] }}</td>
+                                        <td>{!! $post['menu']['name_en'] !!}</td>
                                         <td>{!! $post->title !!}</td>
                                         <td>{!! $post->name_bn !!}</td>
                                         <td>{!! $post->name_en !!}</td>
