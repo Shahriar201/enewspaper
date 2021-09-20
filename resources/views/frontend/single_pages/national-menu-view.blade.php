@@ -7,7 +7,13 @@
                 <a href="https://themebazar.xyz/laraflash"><i class="fa fa-home"> </i> প্রচ্ছদ
                 </a> <i class="fa fa-chevron-right"></i>
 
-                জাতীয় সকল খবর
+                {{-- @php
+                    $posts = App\Model\Post::where('status', 0)
+                                ->where('menu_id', $data['posts']->id)
+                                ->get();
+                @endphp --}}
+
+                {{-- {{ $posts }} সকল খবর --}}
             </div>
 
             <div class="row">

@@ -17,21 +17,21 @@
                         
                             @foreach ($menues as $menu)
                                 <li>
-                                    <a href="{{ route('national.menu.view') }}">
+                                    <a href="{{ route('single.menu.post.view', $menu->id) }}">
                                         {{ $menu->name_bn }}
                                     </a>
 
                                     @if ($menu->name_bn == 	'সারাদেশ')
-                                    <ul>
-                                        @foreach ($districts as $district)
-                                        <li>
-                                            <a href="">
-                                                {{ $district->name_bn }}
-                                            </a>
-                                        </li>
-                                        @endforeach
-                                        
-                                    </ul>
+                                        <ul>
+                                            @foreach ($districts as $district)
+                                            <li>
+                                                <a href="{{ route('single.menu.post.view', $menu->id) }}">
+                                                    {{ $district->name_bn }}
+                                                </a>
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
                                     @endif
                                     
                                 </li>

@@ -29,9 +29,14 @@ class FrontendController extends Controller
         return view('frontend.layouts.single_post.index', $data);
     }
 
-    public function nationalMenu(){
+    public function singleMenu(Request $request, $id){
         $data['logo'] = Logo::first();
-        
+        $data['menues'] = Menu::where('status', 0)->get();
+        $data['districts'] = District::where('status', 0)->get();
+        $data['posts'] = Post::where('status', 0)->where('menu_id', $request->id)->get();
+
+        // dd($data['posts']->toArray());
+
         return view('frontend.single_pages.national-menu-view', $data);
     }
 }

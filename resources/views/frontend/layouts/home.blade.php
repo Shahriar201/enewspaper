@@ -10,6 +10,13 @@
                         <div class="col-lg-7 col-md-7">
                             <div class="themesbazar_led_active owl-carousel">
 
+                                @php
+                                    $posts = App\Model\Post::where('status', '0')
+                                        ->orderBy('id', 'desc')
+                                        ->limit(5)
+                                        ->get();
+                                @endphp
+
                                 @foreach ($posts as $post)
                                     <div class="secOne_newsContent">
                                         <div class="sec-one-image">
@@ -4773,72 +4780,39 @@
                     </div>
 
                     <div class="secNine-content">
-
+                        @php
+                            $travelling = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 11)
+                                ->inRandomOrder()
+                                // ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($travelling as $travel)
                         <div class="secNine-wrpp bg-4">
                             <div class="secNine-image">
                                 <a
-                                    href="view-post/97/%e0%a6%af%e0%a7%87-%e0%a7%ab-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%9f%e0%a6%a8%e0%a6%95%e0%a7%87%e0%a6%a8%e0%a7%8d%e0%a6%a6%e0%a7%8d%e0%a6%b0%e0%a7%87-%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%b6-%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7%21.html">
+                                    href="{{ route('single.post', $travel->id) }}">
                                     <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ab6918406d.png"
-                                        alt="যে ৫ পর্যটনকেন্দ্রে নারীদের প্রবেশ নিষেধ!"
-                                        title="যে ৫ পর্যটনকেন্দ্রে নারীদের প্রবেশ নিষেধ!" />
+                                        src="{{ url('public/upload/post_images/' .$travel->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608ab6918406d.png" --}}
+                                        alt="{!! $travel->title !!}"
+                                        title="{!! $travel->title !!}" />
                                 </a>
 
                             </div>
                             <h2 class="secNine-title">
                                 <a
-                                    href="view-post/97/%e0%a6%af%e0%a7%87-%e0%a7%ab-%e0%a6%aa%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%9f%e0%a6%a8%e0%a6%95%e0%a7%87%e0%a6%a8%e0%a7%8d%e0%a6%a6%e0%a7%8d%e0%a6%b0%e0%a7%87-%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%b6-%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7%21.html">
-                                    যে ৫ পর্যটনকেন্দ্রে নারীদের প্রবেশ নিষেধ!
+                                    href="{{ route('single.post', $travel->id) }}">
+                                    {!! $travel->title !!}
                                 </a>
                             </h2>
                         </div>
-
-                        <div class="secNine-wrpp bg-4">
-                            <div class="secNine-image">
-                                <a
-                                    href="view-post/96/%e0%a7%ae-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%87%e0%a6%b2%e0%a7%87-%e0%a6%98%e0%a7%81%e0%a6%b0%e0%a7%87-%e0%a6%97%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b8-%e0%a6%ac%e0%a7%81%e0%a6%95%e0%a7%87-%e0%a6%a8%e0%a6%be%e0%a6%ae-%e0%a6%b2%e0%a7%87%e0%a6%96%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%af%e0%a7%81%e0%a6%ac%e0%a6%95.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ab4c6813b6.png"
-                                        alt="৮ দিন সাইকেলে ঘুরে গিনেস বুকে নাম লেখালেন যুবক"
-                                        title="৮ দিন সাইকেলে ঘুরে গিনেস বুকে নাম লেখালেন যুবক" />
-                                </a>
-
-                            </div>
-                            <h2 class="secNine-title">
-                                <a
-                                    href="view-post/96/%e0%a7%ae-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%b8%e0%a6%be%e0%a6%87%e0%a6%95%e0%a7%87%e0%a6%b2%e0%a7%87-%e0%a6%98%e0%a7%81%e0%a6%b0%e0%a7%87-%e0%a6%97%e0%a6%bf%e0%a6%a8%e0%a7%87%e0%a6%b8-%e0%a6%ac%e0%a7%81%e0%a6%95%e0%a7%87-%e0%a6%a8%e0%a6%be%e0%a6%ae-%e0%a6%b2%e0%a7%87%e0%a6%96%e0%a6%be%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%af%e0%a7%81%e0%a6%ac%e0%a6%95.html">
-                                    ৮ দিন সাইকেলে ঘুরে গিনেস বুকে নাম লেখালেন যুবক
-                                </a>
-                            </h2>
-                        </div>
-
-                        <div class="secNine-wrpp bg-4">
-                            <div class="secNine-image">
-                                <a
-                                    href="view-post/95/%e0%a7%a7%e0%a7%ae%e0%a7%a6%e0%a7%a6-%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a7%8b-%e0%a6%ac%e0%a6%bf%e0%a6%b8%e0%a7%8d%e0%a6%ae%e0%a7%9f%e0%a6%95%e0%a6%b0-%e0%a6%8f%e0%a6%95-%e0%a6%a6%e0%a7%87%e0%a6%89%e0%a6%b2.html">
-                                    <img class="lazyload"
-                                        src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608ab2910eb62.png"
-                                        alt="১৮০০ বছরের পুরোনো বিস্ময়কর এক দেউল"
-                                        title="১৮০০ বছরের পুরোনো বিস্ময়কর এক দেউল" />
-                                </a>
-
-                            </div>
-                            <h2 class="secNine-title">
-                                <a
-                                    href="view-post/95/%e0%a7%a7%e0%a7%ae%e0%a7%a6%e0%a7%a6-%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%81%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a7%8b-%e0%a6%ac%e0%a6%bf%e0%a6%b8%e0%a7%8d%e0%a6%ae%e0%a7%9f%e0%a6%95%e0%a6%b0-%e0%a6%8f%e0%a6%95-%e0%a6%a6%e0%a7%87%e0%a6%89%e0%a6%b2.html">
-                                    ১৮০০ বছরের পুরোনো বিস্ময়কর এক দেউল
-                                </a>
-                            </h2>
-                        </div>
-
+                        @endforeach
 
                     </div>
 
 
-                    <div class="secNine-content2">
+                    {{-- <div class="secNine-content2">
 
                         <div class="secNine-wrpp2 bg-4">
                             <div class="secNine-image">
@@ -4923,7 +4897,7 @@
 
 
 
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <p><img style="width: 100%;" src="{{ asset('public/frontend') }}/ads/609d0bb785be9.gif"><br></p>
@@ -4969,74 +4943,35 @@
                                 <i class="fa fa-angle-double-right"></i></a> </span2>
                     </div>
 
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/89/%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%9c%e0%a7%80%e0%a6%ac%e0%a6%a8-%e0%a6%93-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6-%e0%a6%8f%e0%a6%95%e0%a6%87%e0%a6%b8%e0%a7%82%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%87-%e0%a6%97%e0%a6%be%e0%a6%81%e0%a6%a5%e0%a6%be.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aaf5bab6eb.png"
-                                    alt="বঙ্গবন্ধুর জীবন ও বাংলাদেশ একইসূত্রে গাঁথা"
-                                    title="বঙ্গবন্ধুর জীবন ও বাংলাদেশ একইসূত্রে গাঁথা" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
+                    @php
+                        $feedbacks = App\Model\Post::where('status', 0)
+                            ->where('menu_id', 20)
+                            ->orderBy('id', 'DESC')
+                            ->limit(3)
+                            ->get()
+                    @endphp
+                    @foreach ($feedbacks as $feedback)
+                        <div class="secOne-smallItem">
+                            <div class="secOne-smallImg2">
                                 <a
-                                    href="view-post/89/%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%9c%e0%a7%80%e0%a6%ac%e0%a6%a8-%e0%a6%93-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6-%e0%a6%8f%e0%a6%95%e0%a6%87%e0%a6%b8%e0%a7%82%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%87-%e0%a6%97%e0%a6%be%e0%a6%81%e0%a6%a5%e0%a6%be.html">
-                                    বঙ্গবন্ধুর জীবন ও বাংলাদেশ একইসূত্রে গাঁথা
+                                    href="{{ route('single.post', $feedback->id) }}">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$feedback->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608aaf5bab6eb.png" --}}
+                                        alt="{!! $feedback->title !!}"
+                                        title="{!! $feedback->title !!}" />
                                 </a>
-                            </h5>
+
+                                <h5 class="secOne_mallTitle">
+                                    <a
+                                        href="{{ route('single.post', $feedback->id) }}">
+                                        {!! $feedback->title !!}
+                                    </a>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/87/%e0%a6%9c%e0%a6%be%e0%a6%a4%e0%a6%bf-%e0%a6%a4%e0%a6%be%e0%a6%81%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%9b%e0%a7%87-%e0%a6%86%e0%a6%9c%e0%a6%a8%e0%a7%8d%e0%a6%ae-%e0%a6%8b%e0%a6%a3%e0%a7%80.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aaf1043962.png"
-                                    alt="জাতি তাঁর কাছে আজন্ম ঋণী" title="জাতি তাঁর কাছে আজন্ম ঋণী" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/87/%e0%a6%9c%e0%a6%be%e0%a6%a4%e0%a6%bf-%e0%a6%a4%e0%a6%be%e0%a6%81%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%9b%e0%a7%87-%e0%a6%86%e0%a6%9c%e0%a6%a8%e0%a7%8d%e0%a6%ae-%e0%a6%8b%e0%a6%a3%e0%a7%80.html">
-                                    জাতি তাঁর কাছে আজন্ম ঋণী
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/86/%e0%a6%a4%e0%a6%be%e0%a6%87-%e0%a6%ac%e0%a6%b2%e0%a7%87-%e0%a7%a7%e0%a7%a6%e0%a7%a6-%e0%a6%95%e0%a7%8b%e0%a6%9f%e0%a6%bf-%e0%a6%9f%e0%a6%a8-%e0%a6%96%e0%a6%be%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%a8%e0%a6%b7%e0%a7%8d%e0%a6%9f%21.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aaec805f55.png"
-                                    alt="তাই বলে ১০০ কোটি টন খাবার নষ্ট!" title="তাই বলে ১০০ কোটি টন খাবার নষ্ট!" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/86/%e0%a6%a4%e0%a6%be%e0%a6%87-%e0%a6%ac%e0%a6%b2%e0%a7%87-%e0%a7%a7%e0%a7%a6%e0%a7%a6-%e0%a6%95%e0%a7%8b%e0%a6%9f%e0%a6%bf-%e0%a6%9f%e0%a6%a8-%e0%a6%96%e0%a6%be%e0%a6%ac%e0%a6%be%e0%a6%b0-%e0%a6%a8%e0%a6%b7%e0%a7%8d%e0%a6%9f%21.html">
-                                    তাই বলে ১০০ কোটি টন খাবার নষ্ট!
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
-
-
+                    @endforeach
+                    
                 </div>
 
                 <div class="col-lg-4 col-md-4">
@@ -5053,71 +4988,34 @@
 
 
                     <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/72/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a3%e0%a7%8b%e0%a6%a6%e0%a6%a8%e0%a6%be%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%aa%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%b8%e0%a6%b9%e0%a6%9c-%e0%a6%95%e0%a6%b0%e0%a6%a4%e0%a7%87-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%af%e0%a7%8b%e0%a6%97-%e0%a6%a8%e0%a7%87%e0%a7%9f%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa453d6ce3.png"
-                                    alt="নারীদের প্রণোদনাপ্রাপ্তি সহজ করতে উদ্যোগ নেয়া জরুরি"
-                                    title="নারীদের প্রণোদনাপ্রাপ্তি সহজ করতে উদ্যোগ নেয়া জরুরি" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
+                        @php
+                            $women_childs = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 21)
+                                ->orderBy('id', 'DESC')
+                                ->limit(3)
+                                ->get()
+                        @endphp
+                        @foreach ($women_childs as $child)
+                            <div class="secOne-smallImg2">
                                 <a
-                                    href="view-post/72/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a3%e0%a7%8b%e0%a6%a6%e0%a6%a8%e0%a6%be%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%aa%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%b8%e0%a6%b9%e0%a6%9c-%e0%a6%95%e0%a6%b0%e0%a6%a4%e0%a7%87-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%af%e0%a7%8b%e0%a6%97-%e0%a6%a8%e0%a7%87%e0%a7%9f%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf.html">
-                                    নারীদের প্রণোদনাপ্রাপ্তি সহজ করতে উদ্যোগ নেয়া জরুরি
+                                    href="{{ route('single.post', $child->id) }}">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$child->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608aa453d6ce3.png" --}}
+                                        alt="{!! $child->title !!}"
+                                        title="{!! $child->title !!}" />
                                 </a>
-                            </h5>
-                        </div>
+
+                                <h5 class="secOne_mallTitle">
+                                    <a
+                                        href="{{ route('single.post', $child->id) }}">
+                                        {!! $child->title !!}
+                                    </a>
+                                </h5>
+                            </div>
+                        @endforeach
+                        
                     </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/71/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b9%e0%a6%be%e0%a6%a4-%e0%a6%a7%e0%a6%b0%e0%a7%87-%e0%a6%8f%e0%a6%97%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%af%e0%a6%be%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87-%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%af%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%96%e0%a6%be%e0%a6%a4.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa3e61b897.png"
-                                    alt="নারীদের হাত ধরে এগিয়ে যাচ্ছে দেশের প্রযুক্তি খাত"
-                                    title="নারীদের হাত ধরে এগিয়ে যাচ্ছে দেশের প্রযুক্তি খাত" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/71/%e0%a6%a8%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b9%e0%a6%be%e0%a6%a4-%e0%a6%a7%e0%a6%b0%e0%a7%87-%e0%a6%8f%e0%a6%97%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%af%e0%a6%be%e0%a6%9a%e0%a7%8d%e0%a6%9b%e0%a7%87-%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%af%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%96%e0%a6%be%e0%a6%a4.html">
-                                    নারীদের হাত ধরে এগিয়ে যাচ্ছে দেশের প্রযুক্তি খাত
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/70/%e0%a6%ae%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%a5-%e0%a6%85%e0%a6%b2%e0%a6%bf%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%a1%e0%a7%87-%e0%a6%b0%e0%a7%8c%e0%a6%aa%e0%a7%8d%e0%a6%af-%e0%a6%ac%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%9e%e0%a7%8d%e0%a6%9c-%e0%a6%85%e0%a6%b0%e0%a7%8d%e0%a6%9c%e0%a6%a8-%e0%a6%95%e0%a6%b0%e0%a6%b2-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a7%87%e0%a7%9f%e0%a7%87%e0%a6%b0%e0%a6%be.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa38cf4067.png"
-                                    alt="ম্যাথ অলিম্পিয়াডে রৌপ্য-ব্রোঞ্জ অর্জন করল বাংলাদেশের মেয়েরা"
-                                    title="ম্যাথ অলিম্পিয়াডে রৌপ্য-ব্রোঞ্জ অর্জন করল বাংলাদেশের মেয়েরা" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/70/%e0%a6%ae%e0%a7%8d%e0%a6%af%e0%a6%be%e0%a6%a5-%e0%a6%85%e0%a6%b2%e0%a6%bf%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%a1%e0%a7%87-%e0%a6%b0%e0%a7%8c%e0%a6%aa%e0%a7%8d%e0%a6%af-%e0%a6%ac%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%9e%e0%a7%8d%e0%a6%9c-%e0%a6%85%e0%a6%b0%e0%a7%8d%e0%a6%9c%e0%a6%a8-%e0%a6%95%e0%a6%b0%e0%a6%b2-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a7%87%e0%a7%9f%e0%a7%87%e0%a6%b0%e0%a6%be.html">
-                                    ম্যাথ অলিম্পিয়াডে রৌপ্য-ব্রোঞ্জ অর্জন করল বাংলাদেশের মেয়েরা
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
 
 
                 </div>
@@ -5133,235 +5031,40 @@
                                 <i class="fa fa-angle-double-right"></i></a> </span2>
                     </div>
 
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/68/%e0%a6%9b%e0%a6%bf%e0%a6%a8%e0%a6%a4%e0%a6%be%e0%a6%87%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%b0-%e0%a6%95%e0%a6%ac%e0%a6%b2%e0%a7%87-%e0%a6%aa%e0%a7%9c%e0%a7%87%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%b8%e0%a6%be%e0%a6%82%e0%a6%ac%e0%a6%be%e0%a6%a6%e0%a6%bf%e0%a6%95-%e0%a6%b8%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%ae%2c-%e0%a6%b8%e0%a6%be%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a7%87-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be%e0%a6%b0.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa2a20db9a.png"
-                                    alt="ছিনতাইকারীর কবলে পড়েছিলেন সাংবাদিক সিয়াম, সাভারে উদ্ধার"
-                                    title="ছিনতাইকারীর কবলে পড়েছিলেন সাংবাদিক সিয়াম, সাভারে উদ্ধার" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
+                    @php
+                        $medias = App\Model\Post::where('status', 0)
+                            ->where('menu_id', 22)
+                            ->orderBy('id', 'DESC')
+                            ->limit(3)
+                            ->get()
+                    @endphp
+                    @foreach ($medias as $media)
+                        <div class="secOne-smallItem">
+                            <div class="secOne-smallImg2">
                                 <a
-                                    href="view-post/68/%e0%a6%9b%e0%a6%bf%e0%a6%a8%e0%a6%a4%e0%a6%be%e0%a6%87%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%80%e0%a6%b0-%e0%a6%95%e0%a6%ac%e0%a6%b2%e0%a7%87-%e0%a6%aa%e0%a7%9c%e0%a7%87%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87%e0%a6%a8-%e0%a6%b8%e0%a6%be%e0%a6%82%e0%a6%ac%e0%a6%be%e0%a6%a6%e0%a6%bf%e0%a6%95-%e0%a6%b8%e0%a6%bf%e0%a7%9f%e0%a6%be%e0%a6%ae%2c-%e0%a6%b8%e0%a6%be%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a7%87-%e0%a6%89%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be%e0%a6%b0.html">
-                                    ছিনতাইকারীর কবলে পড়েছিলেন সাংবাদিক সিয়াম, সাভারে উদ্ধার
+                                    href="{{ route('single.post', $media->id) }}">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$media->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608aa2a20db9a.png" --}}
+                                        alt="{!! $media->title !!}"
+                                        title="{!! $media->title !!}" />
                                 </a>
-                            </h5>
+
+                                <h5 class="secOne_mallTitle">
+                                    <a
+                                        href="{{ route('single.post', $media->id) }}">
+                                        {!! $media->title !!}
+                                    </a>
+                                </h5>
+                            </div>
                         </div>
-                    </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/67/%e0%a6%a1%e0%a6%bf%e0%a6%86%e0%a6%b0%e0%a6%87%e0%a6%89-%e0%a6%b8%e0%a6%a6%e0%a6%b8%e0%a7%8d%e0%a6%af%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af-%e0%a6%b8%e0%a7%81%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be-%e0%a6%b8%e0%a6%be%e0%a6%ae%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a7%80-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%be%e0%a6%a8.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa24388975.png"
-                                    alt="ডিআরইউ সদস্যদের স্বাস্থ্য সুরক্ষা সামগ্রী প্রদান"
-                                    title="ডিআরইউ সদস্যদের স্বাস্থ্য সুরক্ষা সামগ্রী প্রদান" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/67/%e0%a6%a1%e0%a6%bf%e0%a6%86%e0%a6%b0%e0%a6%87%e0%a6%89-%e0%a6%b8%e0%a6%a6%e0%a6%b8%e0%a7%8d%e0%a6%af%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%b8%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%8d%e0%a6%a5%e0%a7%8d%e0%a6%af-%e0%a6%b8%e0%a7%81%e0%a6%b0%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%be-%e0%a6%b8%e0%a6%be%e0%a6%ae%e0%a6%97%e0%a7%8d%e0%a6%b0%e0%a7%80-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%be%e0%a6%a8.html">
-                                    ডিআরইউ সদস্যদের স্বাস্থ্য সুরক্ষা সামগ্রী প্রদান
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
-
-
-
-                    <div class="secOne-smallItem">
-                        <div class="secOne-smallImg2">
-                            <a
-                                href="view-post/66/%e0%a6%b8%e0%a6%b0%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%bf-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%8d%e0%a6%9e%e0%a6%be%e0%a6%aa%e0%a6%a8-%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%a1%e0%a6%bc%e0%a6%aa%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%b2-%e0%a6%b6%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80%e0%a6%95%e0%a7%87-%e0%a6%9a%e0%a6%bf%e0%a6%a0%e0%a6%bf.html">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/postimages/608aa1e75ec6f.png"
-                                    alt="সরকারি বিজ্ঞাপন-ক্রোড়পত্রের বিল শোধের দাবিতে তথ্যমন্ত্রীকে চিঠি"
-                                    title="সরকারি বিজ্ঞাপন-ক্রোড়পত্রের বিল শোধের দাবিতে তথ্যমন্ত্রীকে চিঠি" />
-                            </a>
-
-                            <h5 class="secOne_mallTitle">
-                                <a
-                                    href="view-post/66/%e0%a6%b8%e0%a6%b0%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a6%bf-%e0%a6%ac%e0%a6%bf%e0%a6%9c%e0%a7%8d%e0%a6%9e%e0%a6%be%e0%a6%aa%e0%a6%a8-%e0%a6%95%e0%a7%8d%e0%a6%b0%e0%a7%8b%e0%a6%a1%e0%a6%bc%e0%a6%aa%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%bf%e0%a6%b2-%e0%a6%b6%e0%a7%8b%e0%a6%a7%e0%a7%87%e0%a6%b0-%e0%a6%a6%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80%e0%a6%95%e0%a7%87-%e0%a6%9a%e0%a6%bf%e0%a6%a0%e0%a6%bf.html">
-                                    সরকারি বিজ্ঞাপন-ক্রোড়পত্রের বিল শোধের দাবিতে তথ্যমন্ত্রীকে চিঠি
-                                </a>
-                            </h5>
-                        </div>
-                    </div>
-
-
-
+                    @endforeach
+                    
                 </div>
 
             </div>
         </div>
     </div>
-
-    <!--=======================Section-Ten-Start==========================-->
-    <!-- <section class="section-ten">
-                                                            <div class="container">
-                                                                <div class="row">
-                                                                    <div class="col-lg-8 col-md-8">
-                                                                        <div class="themesBazar_cat">
-                                                                            <a href="#"><i class="fas fa-camera"></i>
-                                                                                ফটোগ্যালারী
-
-                                                                            </a>
-                                                                            <span class="themeBazar"></span>
-                                                                        </div>
-
-
-                                                                        <div class="box-shadow">
-                                                                            <div class="photoSlider-active owl-carousel">
-                                                                                <div class="photo-wrpp">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" data-src="https://themebazar.xyz/laraflash/public/gallery/607f5000c09c1.png" alt="করোনা শনাক্তের ৪ ট্রাক ন" title="করোনা শনাক্তের ৪ ট্রাক ন" />
-                                                                                    <div class="photo-caption">
-
-                                                                                        করোনা শনাক্তের ৪ ট্রাক ন
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="photo-wrpp">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" data-src="https://themebazar.xyz/laraflash/public/gallery/607f4fe78e77e.png" alt="করোনা শনাক্তের" title="করোনা শনাক্তের" />
-                                                                                    <div class="photo-caption">
-
-                                                                                        করোনা শনাক্তের
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="photo-wrpp">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" data-src="https://themebazar.xyz/laraflash/public/gallery/607f4b3535c55.png" alt="সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল" title="সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল" />
-                                                                                    <div class="photo-caption">
-
-                                                                                        সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল
-
-                                                                                    </div>
-                                                                                </div>
-                                                                                <div class="photo-wrpp">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg" data-src="https://themebazar.xyz/laraflash/public/gallery/607f4fba4c4e5.png" alt="করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss" title="করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss" />
-                                                                                    <div class="photo-caption">
-
-                                                                                        করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss
-
-                                                                                    </div>
-                                                                                </div>
-
-
-                                                                            </div>
-                                                                        </div>
-
-
-
-                                                                    </div>
-                                                                    <div class="col-lg-4 col-md-4">
-                                                                        <div class="themesBazar_cat_one">
-                                                                            <span><a href="#"> <i class="fas fa-video"></i>
-                                                                                    ভিডিও গ্যালারী
-
-                                                                                </a> </span>
-
-                                                                        </div>
-
-
-                                                                        <div class="white-bg">
-
-                                                                            <div class="secFour-smallItem">
-                                                                                <div class="secFour-smallImg">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/img.youtube.com/vi/_HHa7asQJIQ/mqdefault.jpg" />
-
-                                                                                    <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="video-icon popup"><i
-                                                                                            class="fas fa-video"></i></a>
-
-                                                                                    <h5 class="secFour_mallTitle">
-                                                                                        <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="popup">
-                                                                                            মাহে রমজানের গান : রহমের বৃষ্টি | জাইমা নূর
-
-                                                                                        </a>
-                                                                                    </h5>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="secFour-smallItem">
-                                                                                <div class="secFour-smallImg">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/img.youtube.com/vi/b9kSKlxY3_8/mqdefault.jpg" />
-
-                                                                                    <a href="https://www.youtube.com/watch?v=b9kSKlxY3_8" class="video-icon popup"><i
-                                                                                            class="fas fa-video"></i></a>
-
-                                                                                    <h5 class="secFour_mallTitle">
-                                                                                        <a href="https://www.youtube.com/watch?v=b9kSKlxY3_8" class="popup">
-                                                                                            বাবা মানে হাজার
-
-                                                                                        </a>
-                                                                                    </h5>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="secFour-smallItem">
-                                                                                <div class="secFour-smallImg">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/img.youtube.com/vi/qXd0D_gyib0/mqdefault.jpg" />
-
-                                                                                    <a href="https://www.youtube.com/watch?v=qXd0D_gyib0" class="video-icon popup"><i
-                                                                                            class="fas fa-video"></i></a>
-
-                                                                                    <h5 class="secFour_mallTitle">
-                                                                                        <a href="https://www.youtube.com/watch?v=qXd0D_gyib0" class="popup">
-                                                                                            সুরের আহবান
-
-                                                                                        </a>
-                                                                                    </h5>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="secFour-smallItem">
-                                                                                <div class="secFour-smallImg">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/img.youtube.com/vi/o4hp7JCyccA/mqdefault.jpg" />
-
-                                                                                    <a href="https://www.youtube.com/watch?v=o4hp7JCyccA" class="video-icon popup"><i
-                                                                                            class="fas fa-video"></i></a>
-
-                                                                                    <h5 class="secFour_mallTitle">
-                                                                                        <a href="https://www.youtube.com/watch?v=o4hp7JCyccA" class="popup">
-                                                                                            নাসিদ বাংলা
-
-                                                                                        </a>
-                                                                                    </h5>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="secFour-smallItem">
-                                                                                <div class="secFour-smallImg">
-                                                                                    <img class="lazyload" src="{{ asset('public/frontend') }}/img.youtube.com/vi/soIa1Y6sY7o/mqdefault.jpg" />
-
-                                                                                    <a href="https://www.youtube.com/watch?v=soIa1Y6sY7o" class="video-icon popup"><i
-                                                                                            class="fas fa-video"></i></a>
-
-                                                                                    <h5 class="secFour_mallTitle">
-                                                                                        <a href="https://www.youtube.com/watch?v=soIa1Y6sY7o" class="popup">
-                                                                                            পর্দা করো
-
-                                                                                        </a>
-                                                                                    </h5>
-                                                                                </div>
-                                                                            </div>
-
-
-
-
-                                                                        </div>
-
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </section> -->
 
 
     <section class="section-ten">
@@ -5378,53 +5081,28 @@
 
 
                     <div class="box-shadow">
+                        @php
+                            $photos = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 23)
+                                ->orderBy('id', 'DESC')
+                                ->limit(4)
+                                ->get()
+                        @endphp
                         <div class="photoSlider-active owl-carousel">
-                            <div class="photo-wrpp">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/gallery/607f5000c09c1.png"
-                                    alt="করোনা শনাক্তের ৪ ট্রাক ন" title="করোনা শনাক্তের ৪ ট্রাক ন" />
-                                <div class="photo-caption">
+                            @foreach ($photos as $photo)
+                                <div class="photo-wrpp">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$photo->image) }}"
+                                        {{-- data-src="https://themebazar.xyz/laraflash/public/gallery/607f5000c09c1.png" --}}
+                                        alt="{!! $photo->title !!}" 
+                                        title="{!! $photo->title !!}" />
+                                    <div class="photo-caption">
 
-                                    করোনা শনাক্তের ৪ ট্রাক ন
+                                        {!! $photo->title !!}
 
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="photo-wrpp">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/gallery/607f4fe78e77e.png"
-                                    alt="করোনা শনাক্তের" title="করোনা শনাক্তের" />
-                                <div class="photo-caption">
-
-                                    করোনা শনাক্তের
-
-                                </div>
-                            </div>
-                            <div class="photo-wrpp">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/gallery/607f4b3535c55.png"
-                                    alt="সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল"
-                                    title="সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল" />
-                                <div class="photo-caption">
-
-                                    সাকিব ইস্যুতে এবার সুর পাল্টালেন মুমিনুল
-
-                                </div>
-                            </div>
-                            <div class="photo-wrpp">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                    data-src="https://themebazar.xyz/laraflash/public/gallery/607f4fba4c4e5.png"
-                                    alt="করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss"
-                                    title="করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss" />
-                                <div class="photo-caption">
-
-                                    করোনা শনাক্তের ৪ ট্রাক নকল কিট জব্দss
-
-                                </div>
-                            </div>
+                            @endforeach
 
 
                         </div>
@@ -5444,91 +5122,32 @@
 
 
                     <div class="white-bg">
+                        @php
+                            $videos = App\Model\Post::where('status', 0)
+                                ->where('menu_id', 24)
+                                ->orderBy('id', 'DESC')
+                                ->limit(5)
+                                ->get()
+                        @endphp
+                        @foreach ($videos as $video)
+                            <div class="secFour-smallItem">
+                                <div class="secFour-smallImg">
+                                    <img class="lazyload"
+                                        src="{{ url('public/upload/post_images/' .$video->image) }}" />
 
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/img.youtube.com/vi/_HHa7asQJIQ/mqdefault.jpg" />
+                                    <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="video-icon popup"><i
+                                            class="fas fa-video"></i></a>
 
-                                <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="video-icon popup"><i
-                                        class="fas fa-video"></i></a>
+                                    <h5 class="secFour_mallTitle">
+                                        <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="popup">
+                                            {!! $video->title !!}
 
-                                <h5 class="secFour_mallTitle">
-                                    <a href="https://www.youtube.com/watch?v=_HHa7asQJIQ" class="popup">
-                                        মাহে রমজানের গান : রহমের বৃষ্টি | জাইমা নূর
-
-                                    </a>
-                                </h5>
+                                        </a>
+                                    </h5>
+                                </div>
                             </div>
-                        </div>
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/img.youtube.com/vi/b9kSKlxY3_8/mqdefault.jpg" />
-
-                                <a href="https://www.youtube.com/watch?v=b9kSKlxY3_8" class="video-icon popup"><i
-                                        class="fas fa-video"></i></a>
-
-                                <h5 class="secFour_mallTitle">
-                                    <a href="https://www.youtube.com/watch?v=b9kSKlxY3_8" class="popup">
-                                        বাবা মানে হাজার
-
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/img.youtube.com/vi/qXd0D_gyib0/mqdefault.jpg" />
-
-                                <a href="https://www.youtube.com/watch?v=qXd0D_gyib0" class="video-icon popup"><i
-                                        class="fas fa-video"></i></a>
-
-                                <h5 class="secFour_mallTitle">
-                                    <a href="https://www.youtube.com/watch?v=qXd0D_gyib0" class="popup">
-                                        সুরের আহবান
-
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/img.youtube.com/vi/o4hp7JCyccA/mqdefault.jpg" />
-
-                                <a href="https://www.youtube.com/watch?v=o4hp7JCyccA" class="video-icon popup"><i
-                                        class="fas fa-video"></i></a>
-
-                                <h5 class="secFour_mallTitle">
-                                    <a href="https://www.youtube.com/watch?v=o4hp7JCyccA" class="popup">
-                                        নাসিদ বাংলা
-
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="secFour-smallItem">
-                            <div class="secFour-smallImg">
-                                <img class="lazyload"
-                                    src="{{ asset('public/frontend') }}/img.youtube.com/vi/soIa1Y6sY7o/mqdefault.jpg" />
-
-                                <a href="https://www.youtube.com/watch?v=soIa1Y6sY7o" class="video-icon popup"><i
-                                        class="fas fa-video"></i></a>
-
-                                <h5 class="secFour_mallTitle">
-                                    <a href="https://www.youtube.com/watch?v=soIa1Y6sY7o" class="popup">
-                                        পর্দা করো
-
-                                    </a>
-                                </h5>
-                            </div>
-                        </div>
-
-
-
-
+                        @endforeach
+ 
                     </div>
 
                 </div>
