@@ -9,160 +9,41 @@
 
                 {{-- @php
                     $posts = App\Model\Post::where('status', 0)
-                                ->where('menu_id', $data['posts']->id)
                                 ->get();
                 @endphp --}}
 
-                {{-- {{ $posts }} সকল খবর --}}
+                {!! $menue_name !!} সকল খবর
             </div>
 
             <div class="row">
                 <div class="col-lg-8 col-md-8">
 
-
                     <div class="archive-content">
 
+                        @foreach ($posts as $post)
+                            <div class="archive-wrpp">
+                                <div class="archiveImage3">
+                                    <a
+                                        href="{{ route('single.post', $post->id) }}">
+                                        <img class="lazyload" src="{{ url('public/upload/post_images/' . $post->image) }}"
+                                            {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/609d0a31acb24.png" --}}
+                                            {{-- alt="{!! $post->title !!}" /> --}}
+                                        </a>
 
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/609d0a31acb24.png"
-                                        alt="বিধিনিষেধ আরও ৭ দিন বাড়ছে" title="বিধিনিষেধ আরও ৭ দিন বাড়ছে" /></a>
+                                    <a href="{{ route('single.post', $post->id) }}"
+                                        class="video-icon6"><i class="fa fa-play"></i></a>
 
-                                <a href="../../view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
+                                </div>
+                                <h6 class="archiveTitle3">
+                                    <a
+                                        href="{{ route('single.post', $post->id) }}">
+                                        {!! $post->name_en !!}
 
-                            </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/133/%e0%a6%ac%e0%a6%bf%e0%a6%a7%e0%a6%bf%e0%a6%a8%e0%a6%bf%e0%a6%b7%e0%a7%87%e0%a6%a7-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ad-%e0%a6%a6%e0%a6%bf%e0%a6%a8-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%9b%e0%a7%87.html">
-                                    বিধিনিষেধ আরও ৭ দিন বাড়ছে
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/74/%e0%a6%9a%e0%a6%b2%e0%a6%a4%e0%a6%bf-%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a6%a7%e0%a7%8d%e0%a6%af%e0%a7%87-%e0%a7%ab%e0%a6%9c%e0%a6%bf-%e0%a6%af%e0%a7%81%e0%a6%97%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%b6%e0%a7%87-%e0%a6%b8%e0%a6%ac-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%b8%e0%a7%8d%e0%a6%a4%e0%a7%81%e0%a6%a4%e0%a6%bf-%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%a8%e0%a7%8d%e0%a6%a8-_-%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608aa4e4b58eb.png"
-                                        alt="চলতি বছরের মধ্যে ৫জি যুগে প্রবেশে সব প্রস্তুতি সম্পন্ন : মন্ত্রী"
-                                        title="চলতি বছরের মধ্যে ৫জি যুগে প্রবেশে সব প্রস্তুতি সম্পন্ন : মন্ত্রী" /></a>
-
+                                    </a>
+                                </h6>
 
                             </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/74/%e0%a6%9a%e0%a6%b2%e0%a6%a4%e0%a6%bf-%e0%a6%ac%e0%a6%9b%e0%a6%b0%e0%a7%87%e0%a6%b0-%e0%a6%ae%e0%a6%a7%e0%a7%8d%e0%a6%af%e0%a7%87-%e0%a7%ab%e0%a6%9c%e0%a6%bf-%e0%a6%af%e0%a7%81%e0%a6%97%e0%a7%87-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%ac%e0%a7%87%e0%a6%b6%e0%a7%87-%e0%a6%b8%e0%a6%ac-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%b8%e0%a7%8d%e0%a6%a4%e0%a7%81%e0%a6%a4%e0%a6%bf-%e0%a6%b8%e0%a6%ae%e0%a7%8d%e0%a6%aa%e0%a6%a8%e0%a7%8d%e0%a6%a8-_-%e0%a6%ae%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a7%80.html">
-                                    চলতি বছরের মধ্যে ৫জি যুগে প্রবেশে সব প্রস্তুতি সম্পন্ন : মন্ত্রী
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a89f57a41a.png"
-                                        alt="করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন" title="করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন" /></a>
-
-                                <a href="../../view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
-
-                            </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/18/%e0%a6%95%e0%a6%b0%e0%a7%8b%e0%a6%a8%e0%a6%be%e0%a7%9f-%e0%a6%ae%e0%a7%83%e0%a6%a4%e0%a7%8d%e0%a6%af%e0%a7%81%e0%a6%b0-%e0%a6%ae%e0%a6%bf%e0%a6%9b%e0%a6%bf%e0%a6%b2%e0%a7%87-%e0%a6%86%e0%a6%b0%e0%a6%93-%e0%a7%ae%e0%a7%ae-%e0%a6%9c%e0%a6%a8.html">
-                                    করোনায় মৃত্যুর মিছিলে আরও ৮৮ জন
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/13/%e0%a6%ae%e0%a7%81%e0%a6%9c%e0%a6%bf%e0%a6%ac-%e0%a6%9c%e0%a6%b2%e0%a6%ac%e0%a6%be%e0%a6%af%e0%a6%bc%e0%a7%81-%e0%a6%b8%e0%a6%ae%e0%a7%83%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%bf-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a6%b2%e0%a7%8d%e0%a6%aa%e0%a6%a8%e0%a6%be%e2%80%99-%e0%a6%b9%e0%a6%ac%e0%a7%87-%e0%a6%b8%e0%a6%ae%e0%a7%83%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%bf%e0%a6%b0-%e0%a6%aa%e0%a6%a5%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%b0%e0%a7%8d%e0%a6%b6%e0%a6%95.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a88a5a13e5.png"
-                                        alt="মুজিব জলবায়ু সমৃদ্ধি পরিকল্পনা’ হবে সমৃদ্ধির পথপ্রদর্শক"
-                                        title="মুজিব জলবায়ু সমৃদ্ধি পরিকল্পনা’ হবে সমৃদ্ধির পথপ্রদর্শক" /></a>
-
-
-                            </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/13/%e0%a6%ae%e0%a7%81%e0%a6%9c%e0%a6%bf%e0%a6%ac-%e0%a6%9c%e0%a6%b2%e0%a6%ac%e0%a6%be%e0%a6%af%e0%a6%bc%e0%a7%81-%e0%a6%b8%e0%a6%ae%e0%a7%83%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%bf-%e0%a6%aa%e0%a6%b0%e0%a6%bf%e0%a6%95%e0%a6%b2%e0%a7%8d%e0%a6%aa%e0%a6%a8%e0%a6%be%e2%80%99-%e0%a6%b9%e0%a6%ac%e0%a7%87-%e0%a6%b8%e0%a6%ae%e0%a7%83%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%bf%e0%a6%b0-%e0%a6%aa%e0%a6%a5%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a6%b0%e0%a7%8d%e0%a6%b6%e0%a6%95.html">
-                                    মুজিব জলবায়ু সমৃদ্ধি পরিকল্পনা’ হবে সমৃদ্ধির পথপ্রদর্শক
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/10/%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a6%a4%e0%a7%87-%e0%a6%93%e0%a6%b7%e0%a7%81%e0%a6%a7-%e0%a6%93-%e0%a6%9a%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a7%8e%e0%a6%b8%e0%a6%be-%e0%a6%b8%e0%a6%b0%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a6%be%e0%a6%ae-%e0%a6%aa%e0%a6%be%e0%a6%a0%e0%a6%be%e0%a6%a4%e0%a7%87-%e0%a6%9a%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a87262b50b.png"
-                                        alt="ভারতে ওষুধ ও চিকিৎসা সরঞ্জাম পাঠাতে চায় বাংলাদেশ"
-                                        title="ভারতে ওষুধ ও চিকিৎসা সরঞ্জাম পাঠাতে চায় বাংলাদেশ" /></a>
-
-
-                            </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/10/%e0%a6%ad%e0%a6%be%e0%a6%b0%e0%a6%a4%e0%a7%87-%e0%a6%93%e0%a6%b7%e0%a7%81%e0%a6%a7-%e0%a6%93-%e0%a6%9a%e0%a6%bf%e0%a6%95%e0%a6%bf%e0%a7%8e%e0%a6%b8%e0%a6%be-%e0%a6%b8%e0%a6%b0%e0%a6%9e%e0%a7%8d%e0%a6%9c%e0%a6%be%e0%a6%ae-%e0%a6%aa%e0%a6%be%e0%a6%a0%e0%a6%be%e0%a6%a4%e0%a7%87-%e0%a6%9a%e0%a6%be%e0%a7%9f-%e0%a6%ac%e0%a6%be%e0%a6%82%e0%a6%b2%e0%a6%be%e0%a6%a6%e0%a7%87%e0%a6%b6.html">
-                                    ভারতে ওষুধ ও চিকিৎসা সরঞ্জাম পাঠাতে চায় বাংলাদেশ
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-                        <div class="archive-wrpp">
-                            <div class="archiveImage3">
-                                <a
-                                    href="../../view-post/1/%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%97%e0%a7%87-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%a6%e0%a6%bf%e0%a6%ac%e0%a6%b8-%e0%a6%a4%e0%a6%bf%e0%a6%a8%e0%a6%9f%e0%a6%bf%2c-%e0%a6%ab%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%a4%e0%a7%87-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a7%87-%e0%a6%b2%e0%a6%95%e0%a6%a1%e0%a6%be%e0%a6%89%e0%a6%a8.html">
-                                    <img class="lazyload" src="{{ asset('public/frontend') }}/templateimage/60e42594dd1aa.jpg"
-                                        data-src="https://themebazar.xyz/laraflash/public/postimages/608a7c75d6f2f.png"
-                                        alt="ঈদের আগে কর্মদিবস তিনটি, ফের বাড়তে পারে লকডাউন"
-                                        title="ঈদের আগে কর্মদিবস তিনটি, ফের বাড়তে পারে লকডাউন" /></a>
-
-                                <a href="../../view-post/1/%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%97%e0%a7%87-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%a6%e0%a6%bf%e0%a6%ac%e0%a6%b8-%e0%a6%a4%e0%a6%bf%e0%a6%a8%e0%a6%9f%e0%a6%bf%2c-%e0%a6%ab%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%a4%e0%a7%87-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a7%87-%e0%a6%b2%e0%a6%95%e0%a6%a1%e0%a6%be%e0%a6%89%e0%a6%a8.html"
-                                    class="video-icon6"><i class="fa fa-play"></i></a>
-
-                            </div>
-                            <h6 class="archiveTitle3">
-                                <a
-                                    href="../../view-post/1/%e0%a6%88%e0%a6%a6%e0%a7%87%e0%a6%b0-%e0%a6%86%e0%a6%97%e0%a7%87-%e0%a6%95%e0%a6%b0%e0%a7%8d%e0%a6%ae%e0%a6%a6%e0%a6%bf%e0%a6%ac%e0%a6%b8-%e0%a6%a4%e0%a6%bf%e0%a6%a8%e0%a6%9f%e0%a6%bf%2c-%e0%a6%ab%e0%a7%87%e0%a6%b0-%e0%a6%ac%e0%a6%be%e0%a7%9c%e0%a6%a4%e0%a7%87-%e0%a6%aa%e0%a6%be%e0%a6%b0%e0%a7%87-%e0%a6%b2%e0%a6%95%e0%a6%a1%e0%a6%be%e0%a6%89%e0%a6%a8.html">
-                                    ঈদের আগে কর্মদিবস তিনটি, ফের বাড়তে পারে লকডাউন
-
-                                </a>
-                            </h6>
-
-                        </div>
-
-
-
-
-
-
+                        @endforeach
 
                     </div>
 

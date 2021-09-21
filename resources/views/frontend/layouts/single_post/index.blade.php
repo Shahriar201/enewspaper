@@ -67,7 +67,7 @@
 
                                 <img src="{{ url('public/upload/post_images/' .$post->image) }}"
                                     alt=""
-                                    title="{!! $post->name_bn !!}">
+                                    title="{!! $post->name_en !!}">
                                 <span>
                                     File Pic
                                 </span>
@@ -81,13 +81,9 @@
                             <p class="single-details">
                             <p><span class="VIiyi" lang="en"><span class="JLqJ4b"
                                         data-language-for-alternatives="en" data-language-to-translate-into="bn"
-                                        data-phrase-index="0"><span>{!! $post->name_bn !!}</span></span></span></p>
+                                        data-phrase-index="0"><span>{!! $post->name_en !!}</span></span></span></p>
 
                             </p>
-
-
-
-
 
                             <h3 class="single-social-title">
                                 Share
@@ -110,129 +106,38 @@
                                 </a>
                                 <span class="themeBazar"></span>
                             </div>
+
                             <div class="related-content">
 
+                                {{-- @dd($category_wise_posts); --}}
+
+                                @foreach ($category_wise_posts as $category_post)
+                                    <div class="related-wrpp">
+                                        <div class="related-image">
+                                            <a
+                                                href="{{ route('single.post', $category_post->id) }}">
+                                                <img class="lazyload" src="{{ url('public/upload/post_images/' .$category_post->image) }}"
+                                                    {{-- data-src="https://themebazar.xyz/laraflash/public/postimages/608a8f9898407.jpg" --}}
+                                                    {{-- alt="{!! $category_post->title !!}" --}}
+                                                    title="{!! $category_post->title !!}" />
+                                            </a>
 
 
-                                <div class="related-wrpp">
-                                    <div class="related-image">
-                                        <a
-                                            href="../37/%e2%80%98%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%b8%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%b8-%e0%a6%ae%e0%a7%8b%e0%a6%95%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b2%e0%a6%be%e0%a7%9f-%e0%a6%a1%e0%a6%bf%e0%a6%9c%e0%a6%bf%e0%a6%9f%e0%a6%be%e0%a6%b2-%e0%a6%86%e0%a6%87%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a6%b0%e0%a7%80-%e0%a6%ad%e0%a7%82%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf%e2%80%99.html">
-                                            <img class="lazyload" src="../../public/templateimage/60e42594dd1aa.jpg"
-                                                data-src="https://themebazar.xyz/laraflash/public/postimages/608a8f9898407.jpg"
-                                                alt="‘তথ্যসন্ত্রাস মোকাবিলায় ডিজিটাল আইনের কার্যকরী ভূমিকা জরুরি’"
-                                                title="‘তথ্যসন্ত্রাস মোকাবিলায় ডিজিটাল আইনের কার্যকরী ভূমিকা জরুরি’" />
-                                        </a>
+                                        </div>
+                                        <h4 class="related-title">
+                                            <a
+                                                href="{{ route('single.post', $category_post->id) }}">
+                                                {!! $category_post->name_en !!}
+                                            </a>
+                                        </h4>
 
-
+                                        <div class="cat-meta">
+                                            <a href="#"><i class="fa fa-tags"> </i>
+                                                Date
+                                            </a>
+                                        </div>
                                     </div>
-                                    <h4 class="related-title">
-                                        <a
-                                            href="../37/%e2%80%98%e0%a6%a4%e0%a6%a5%e0%a7%8d%e0%a6%af%e0%a6%b8%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%b8-%e0%a6%ae%e0%a7%8b%e0%a6%95%e0%a6%be%e0%a6%ac%e0%a6%bf%e0%a6%b2%e0%a6%be%e0%a7%9f-%e0%a6%a1%e0%a6%bf%e0%a6%9c%e0%a6%bf%e0%a6%9f%e0%a6%be%e0%a6%b2-%e0%a6%86%e0%a6%87%e0%a6%a8%e0%a7%87%e0%a6%b0-%e0%a6%95%e0%a6%be%e0%a6%b0%e0%a7%8d%e0%a6%af%e0%a6%95%e0%a6%b0%e0%a7%80-%e0%a6%ad%e0%a7%82%e0%a6%ae%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%9c%e0%a6%b0%e0%a7%81%e0%a6%b0%e0%a6%bf%e2%80%99.html">
-                                            Effective role of digital law is important in combating information
-                                            terrorism&#039;
-                                        </a>
-                                    </h4>
-
-                                    <div class="cat-meta">
-                                        <a href="#"><i class="fa fa-tags"> </i>
-                                            29-04-2021
-                                        </a>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="related-wrpp">
-                                    <div class="related-image">
-                                        <a
-                                            href="../35/%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a7%e0%a6%be%e0%a6%a8%e0%a7%80%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%b0-%e0%a6%b8%e0%a7%87%e0%a6%ac%e0%a6%be%e0%a7%9f-%e0%a6%86.html">
-                                            <img class="lazyload" src="../../public/templateimage/60e42594dd1aa.jpg"
-                                                data-src="https://themebazar.xyz/laraflash/public/postimages/608a8ef9762d2.png"
-                                                alt="রাজধানীবাসীর সেবায় আ.লীগের ২ মেডিকেল টিম"
-                                                title="রাজধানীবাসীর সেবায় আ.লীগের ২ মেডিকেল টিম" />
-                                        </a>
-
-                                        <a href="../35/%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a7%e0%a6%be%e0%a6%a8%e0%a7%80%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%b0-%e0%a6%b8%e0%a7%87%e0%a6%ac%e0%a6%be%e0%a7%9f-%e0%a6%86.html"
-                                            class="related-icon"><i class="fa fa-play"></i></a>
-
-                                    </div>
-                                    <h4 class="related-title">
-                                        <a
-                                            href="../35/%e0%a6%b0%e0%a6%be%e0%a6%9c%e0%a6%a7%e0%a6%be%e0%a6%a8%e0%a7%80%e0%a6%ac%e0%a6%be%e0%a6%b8%e0%a7%80%e0%a6%b0-%e0%a6%b8%e0%a7%87%e0%a6%ac%e0%a6%be%e0%a7%9f-%e0%a6%86.html">
-                                            2 medical teams of A-League in the service of the people of the capital
-                                        </a>
-                                    </h4>
-
-                                    <div class="cat-meta">
-                                        <a href="#"><i class="fa fa-tags"> </i>
-                                            29-04-2021
-                                        </a>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="related-wrpp">
-                                    <div class="related-image">
-                                        <a
-                                            href="../29/%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%87%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%95%e0%a7%83%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%87%e0%a6%b0%e0%a6%ab%e0%a6%be%e0%a6%a8-%e0%a6%b8%e0%a7%87%e0%a6%b2%e0%a6%bf%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be.html">
-                                            <img class="lazyload" src="../../public/templateimage/60e42594dd1aa.jpg"
-                                                data-src="https://themebazar.xyz/laraflash/public/postimages/608a8d61e1f4e.png"
-                                                alt="মুক্তি পেয়ে বঙ্গবন্ধুর প্রতিকৃতিতে ইরফান সেলিমের শ্রদ্ধা"
-                                                title="মুক্তি পেয়ে বঙ্গবন্ধুর প্রতিকৃতিতে ইরফান সেলিমের শ্রদ্ধা" />
-                                        </a>
-
-                                        <a href="../29/%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%87%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%95%e0%a7%83%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%87%e0%a6%b0%e0%a6%ab%e0%a6%be%e0%a6%a8-%e0%a6%b8%e0%a7%87%e0%a6%b2%e0%a6%bf%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be.html"
-                                            class="related-icon"><i class="fa fa-play"></i></a>
-
-                                    </div>
-                                    <h4 class="related-title">
-                                        <a
-                                            href="../29/%e0%a6%ae%e0%a7%81%e0%a6%95%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%aa%e0%a7%87%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%99%e0%a7%8d%e0%a6%97%e0%a6%ac%e0%a6%a8%e0%a7%8d%e0%a6%a7%e0%a7%81%e0%a6%b0-%e0%a6%aa%e0%a7%8d%e0%a6%b0%e0%a6%a4%e0%a6%bf%e0%a6%95%e0%a7%83%e0%a6%a4%e0%a6%bf%e0%a6%a4%e0%a7%87-%e0%a6%87%e0%a6%b0%e0%a6%ab%e0%a6%be%e0%a6%a8-%e0%a6%b8%e0%a7%87%e0%a6%b2%e0%a6%bf%e0%a6%ae%e0%a7%87%e0%a6%b0-%e0%a6%b6%e0%a7%8d%e0%a6%b0%e0%a6%a6%e0%a7%8d%e0%a6%a7%e0%a6%be.html">
-                                            Irfan Selim pays homage to the portrait of Bangabandhu after his release
-                                        </a>
-                                    </h4>
-
-                                    <div class="cat-meta">
-                                        <a href="#"><i class="fa fa-tags"> </i>
-                                            29-04-2021
-                                        </a>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="related-wrpp">
-                                    <div class="related-image">
-                                        <a
-                                            href="%e2%80%98%e0%a6%9f%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%a8%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%bf%e0%a6%ad%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%9b%e0%a7%9c%e0%a6%be%e0%a6%a8%e0%a7%8b%e0%a7%9f%e2%80%99-%e0%a6%ac%e0%a6%bf%e0%a6%8f%e0%a6%a8%e0%a6%aa%e0%a6%bf%e0%a6%95%e0%a7%87-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%ae%e0%a6%be-%e0%a6%9a%e0%a6%be%e0%a6%93%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%86%e0%a6%b9%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%a8.html">
-                                            <img class="lazyload" src="../../public/templateimage/60e42594dd1aa.jpg"
-                                                data-src="https://themebazar.xyz/laraflash/public/postimages/608a8120293b2.png"
-                                                alt="‘টিকা নিয়ে বিভ্রান্তি ছড়ানোয়’ বিএনপিকে ক্ষমা চাওয়ার আহ্বান"
-                                                title="‘টিকা নিয়ে বিভ্রান্তি ছড়ানোয়’ বিএনপিকে ক্ষমা চাওয়ার আহ্বান" />
-                                        </a>
-
-
-                                    </div>
-                                    <h4 class="related-title">
-                                        <a
-                                            href="%e2%80%98%e0%a6%9f%e0%a6%bf%e0%a6%95%e0%a6%be-%e0%a6%a8%e0%a6%bf%e0%a7%9f%e0%a7%87-%e0%a6%ac%e0%a6%bf%e0%a6%ad%e0%a7%8d%e0%a6%b0%e0%a6%be%e0%a6%a8%e0%a7%8d%e0%a6%a4%e0%a6%bf-%e0%a6%9b%e0%a7%9c%e0%a6%be%e0%a6%a8%e0%a7%8b%e0%a7%9f%e2%80%99-%e0%a6%ac%e0%a6%bf%e0%a6%8f%e0%a6%a8%e0%a6%aa%e0%a6%bf%e0%a6%95%e0%a7%87-%e0%a6%95%e0%a7%8d%e0%a6%b7%e0%a6%ae%e0%a6%be-%e0%a6%9a%e0%a6%be%e0%a6%93%e0%a7%9f%e0%a6%be%e0%a6%b0-%e0%a6%86%e0%a6%b9%e0%a7%8d%e0%a6%ac%e0%a6%be%e0%a6%a8.html">
-                                            &#039;Spreading confusion over vaccination&#039; calls on BNP to apologize
-                                        </a>
-                                    </h4>
-
-                                    <div class="cat-meta">
-                                        <a href="#"><i class="fa fa-tags"> </i>
-                                            29-04-2021
-                                        </a>
-                                    </div>
-                                </div>
-
-
-
-
-
+                                @endforeach
 
                             </div>
 

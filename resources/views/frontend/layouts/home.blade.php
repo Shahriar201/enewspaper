@@ -81,7 +81,7 @@
                                         {{-- @foreach ($menues as $menu) --}}
                                         <div class="cat-meta">
                                             <a href="#"> <i class="far fa-newspaper"></i>
-                                                {{ $post['menu']['name_bn'] }}
+                                                {{ $post['menu']['name_en'] }}
                                             </a>
                                         </div>
                                         {{-- @endforeach --}}
@@ -114,7 +114,7 @@
 
                                         <div class="sec-small-cat1">
                                             <a href="{{ route('single.post', $random->id) }}">
-                                                {{ $random['menu']['name_bn'] }}
+                                                {{ $random['menu']['name_en'] }}
                                             </a>
                                         </div>
 
@@ -164,7 +164,7 @@
 
                                 <div class="cat-meta">
                                     <a href="#"> <i class="far fa-newspaper"></i>
-                                        {{ $random['menu']['name_bn'] }}
+                                        {{ $random['menu']['name_en'] }}
                                     </a>
                                 </div>
 
