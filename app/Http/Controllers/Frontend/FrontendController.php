@@ -31,7 +31,7 @@ class FrontendController extends Controller
         $data['menu'] = Menu::all();
         $data['category_wise_posts'] = Post::where('status', 0)->where('category_id', $id)->orderBy('id', 'DESC')->get();
         // $data['posts'] = Post::where('status', 0)->orderBy('id', 'DESC')->get();
-        dd($data['category_wise_posts']->toArray());
+        // dd($data['category_wise_posts']->toArray());
 
         return view('frontend.layouts.single_post.index', $data);
     }

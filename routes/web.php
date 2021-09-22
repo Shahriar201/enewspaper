@@ -87,14 +87,25 @@ Route::group(['middleware'=>'admin'], function(){
         Route::post('/post/status/controll','Backend\PostController@status')->name('posts.status.controll');      
     });
     
-    Route::prefix('nationals')->group(function(){
-        Route::get('/view', 'Backend\NationalMenuController@view')->name('nationals.view');
-        Route::get('/add', 'Backend\NationalMenuController@add')->name('nationals.add');
-        Route::post('/store', 'Backend\NationalMenuController@store')->name('nationals.store');  
-        Route::get('/edit/{id}', 'Backend\NationalMenuController@edit')->name('nationals.edit');
-        Route::post('/update/{id}', 'Backend\NationalMenuController@update')->name('nationals.update');
-        Route::post('/delete', 'Backend\NationalMenuController@delete')->name('nationals.delete');
-        Route::post('/post/status/controll','Backend\NationalMenuController@status')->name('nationals.status.controll');      
+    // Route::prefix('nationals')->group(function(){
+    //     Route::get('/view', 'Backend\NationalMenuController@view')->name('nationals.view');
+    //     Route::get('/add', 'Backend\NationalMenuController@add')->name('nationals.add');
+    //     Route::post('/store', 'Backend\NationalMenuController@store')->name('nationals.store');  
+    //     Route::get('/edit/{id}', 'Backend\NationalMenuController@edit')->name('nationals.edit');
+    //     Route::post('/update/{id}', 'Backend\NationalMenuController@update')->name('nationals.update');
+    //     Route::post('/delete', 'Backend\NationalMenuController@delete')->name('nationals.delete');
+    //     Route::post('/post/status/controll','Backend\NationalMenuController@status')->name('nationals.status.controll');      
+    // });
+
+    Route::prefix('contacts')->group(function(){
+    
+        Route::get('/view', 'Backend\ContactController@view')->name('contacts.view');
+        Route::get('/add', 'Backend\ContactController@add')->name('contacts.add');
+        Route::post('/store', 'Backend\ContactController@store')->name('contacts.store'); 
+        Route::get('/edit/{id}', 'Backend\ContactController@edit')->name('contacts.edit');
+        Route::post('/update/{id}', 'Backend\ContactController@update')->name('contacts.update');
+        Route::post('/delete', 'Backend\ContactController@delete')->name('contacts.delete');
+        
     });
 });
 

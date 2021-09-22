@@ -4,14 +4,14 @@
         <div class="row">
             <div class="col-lg-12 col-md-12">
                 <div class="logomobil">
-                    <a href="https://themebazar.xyz/laraflash">
+                    <a href="">
                         <img src="public/templateimage/60e42537e85de.gif" alt="">
                     </a>
                 </div>
                 <div class="stellarnav">
                     <ul>
                         <li class="current-item">
-                            <a href="https://themebazar.xyz/laraflash"> <i class="fas fa-home"></i>
+                            <a href="{{ url('/') }}"> <i class="fas fa-home"></i>
                             </a>
                         </li>
                         
@@ -21,6 +21,19 @@
                                         {{ $menu->name_en }}
                                     </a>
 
+                                    @if ($menu->name_en == 	'Country')
+                                        <ul>
+                                            @foreach ($districts as $district)
+                                            <li>
+                                                <a href="{{ route('single.menu.post.view', $menu->id) }}">
+                                                    {{ $district->name_en }}
+                                                </a>
+                                            </li>
+                                            @endforeach
+                                            
+                                        </ul>
+                                    @endif
+                                    
                                     @if ($menu->name_en == 	'সারাদেশ')
                                         <ul>
                                             @foreach ($districts as $district)
