@@ -25,6 +25,7 @@ class CreateContactsTable extends Migration
             $table->string('contact_circulation_phone_en')->nullable();
             $table->string('contact_advertising_phone_bn')->nullable();
             $table->string('contact_advertising_phone_en')->nullable();
+            $table->string('contact_email')->nullable();
             // $table->string('editor_publisher_bn')->nullable();
             // $table->string('editor_publisher_en')->nullable();
             $table->string('editor_name_bn')->nullable();
@@ -43,8 +44,7 @@ class CreateContactsTable extends Migration
             $table->string('editor_phone_en')->nullable();
             // $table->string('editor_email_title_bn')->nullable();
             // $table->string('editor_email_title_en')->nullable();
-            $table->string('editor_email_bn')->nullable();
-            $table->string('editor_email_en')->nullable();
+            $table->string('editor_email')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->unsignedBigInteger('updated_by')->nullable();
             $table->timestamps();

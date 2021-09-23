@@ -130,6 +130,15 @@
                                         </div>
                                         
                                         <div class="form-group col-md-6">
+                                            <label for="name">Contact email</label>
+                                            <input type="text" name="contact_email" value="{{ @$editData->contact_email }}"
+                                                class="form-control form-control-sm">
+                                            <font style="color:red">
+                                                {{ $errors->has('contact_email') ? $errors->first('contact_email') : '' }}
+                                            </font>
+                                        </div>
+                                        
+                                        <div class="form-group col-md-6">
                                             <label for="name">Editor Name Bangla</label>
                                             <input type="text" name="editor_name_bn" value="{{ @$editData->editor_name_bn }}"
                                                 class="form-control form-control-sm">
@@ -218,22 +227,13 @@
                                                 {{ $errors->has('editor_phone_en') ? $errors->first('editor_phone_en') : '' }}
                                             </font>
                                         </div>
-                                        
-                                        <div class="form-group col-md-6">
-                                            <label for="name">Editor Email Bangla</label>
-                                            <input type="text" name="editor_email_bn" value="{{ @$editData->editor_email_bn }}"
-                                                class="form-control form-control-sm">
-                                            <font style="color:red">
-                                                {{ $errors->has('editor_email_bn') ? $errors->first('editor_email_bn') : '' }}
-                                            </font>
-                                        </div>
                                        
                                         <div class="form-group col-md-6">
-                                            <label for="name">Editor Email English</label>
-                                            <input type="text" name="editor_email_en" value="{{ @$editData->editor_email_en }}"
+                                            <label for="editor_email">Editor Email</label>
+                                            <input type="text" name="editor_email" value="{{ @$editData->editor_email }}"
                                                 class="form-control form-control-sm">
                                             <font style="color:red">
-                                                {{ $errors->has('editor_email_en') ? $errors->first('editor_email_en') : '' }}
+                                                {{ $errors->has('editor_email') ? $errors->first('editor_email') : '' }}
                                             </font>
                                         </div>
 
@@ -307,6 +307,9 @@
                     contact_advertising_phone_en: {
                         required: true,
                     },
+                    contact_email: {
+                        required: true,
+                    },
                     editor_name_bn: {
                         required: true,
                     },
@@ -337,15 +340,9 @@
                     editor_phone_en: {
                         required: true,
                     },
-                    editor_email_bn: {
+                    editor_email: {
                         required: true,
-                    },
-                    editor_email_en: {
-                        required: true,
-                    },
-                    status: {
-                        required: true,
-                    },
+                    }
 
                 },
                 messages: {

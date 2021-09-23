@@ -58,38 +58,50 @@
                                         {{-- <th>Advertising Phone Bangla</th> --}}
                                         <th>Advertising Phone English</th>
                                         {{-- <th>Editor Name Bangla</th> --}}
+                                        <th>Contact Email</th>
                                         <th>Editor Name English</th>
+                                        <th>Executive Editor Name English</th>
+                                        <th>Message Editor Name English</th>
                                         {{-- <th>Editor Office Bangla</th> --}}
                                         <th>Editor Office English</th>
                                         {{-- <th>Editor Phone Bangla</th> --}}
                                         <th>Editor Phone English</th>
                                         {{-- <th>Editor Email Bangla</th> --}}
-                                        <th>Editor Email English</th>
+                                        <th>Editor Email</th>
                                         {{-- <th>Status</th> --}}
                                         <th>Action</th>
                                     </tr>
                                 </thead>
 
-                                {{-- <tbody>
-                                    @foreach ($allData as $key => $district)
+                                <tbody>
+                                    @foreach ($allData as $key => $contact)
 
-                                    <tr class="{{ $district->id }}">
+                                    <tr class="{{ $contact->id }}">
                                         <td>{{ $key+1 }}</td>
-                                        <td>{{ $district->name_bn }}</td>
-                                        <td>{{ $district->name_en }}</td>
-                                        <td>
-                                            <button id="{{ $district->id }}" class="btn btn-basic"
+                                        <td>{{ $contact->contact_title_location_en }}</td>
+                                        <td>{{ $contact->contact_phone_en }}</td>
+                                        <td>{{ $contact->contact_circulation_phone_en }}</td>
+                                        <td>{{ $contact->contact_advertising_phone_en }}</td>
+                                        <td>{{ $contact->contact_email }}</td>
+                                        <td>{{ $contact->editor_name_en }}</td>
+                                        <td>{{ $contact->executive_editor_name_en }}</td>
+                                        <td>{{ $contact->message_editor_name_en }}</td>
+                                        <td>{{ $contact->editor_office_en }}</td>
+                                        <td>{{ $contact->editor_phone_en }}</td>
+                                        <td>{{ $contact->editor_email }}</td>
+                                        {{-- <td>
+                                            <button id="{{ $contact->id }}" class="btn btn-basic"
                                                 style="background-color:#faebd700;color:#3e5569"
-                                                onclick="districtStatusControll({{ $district->id }})">{{ $district->status == 0 ? 'Active' : 'Deactive' }}</button>
+                                                onclick="contactStatusControll({{ $contact->id }})">{{ $contact->status == 0 ? 'Active' : 'Deactive' }}</button>
 
-                                        </td>
+                                        </td> --}}
                                         <td>
-                                            <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('districts.edit', $district->id)}}">
+                                            <a title="Edit" id="edit" class="btn btn-sm btn-primary" href="{{ route('contacts.edit', $contact->id)}}">
                                                 <i class="fa fa-edit">
 
                                                 </i>
                                             </a>
-                                            <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('districts.delete') }}" data-token="{{ csrf_token() }}" data-id="{{ $district->id }}">
+                                            <a title="Delete" id="delete" class="btn btn-sm btn-danger" href="{{ route('contacts.delete') }}" data-token="{{ csrf_token() }}" data-id="{{ $contact->id }}">
                                                 <i class="fa fa-trash">
 
                                                 </i>
@@ -99,7 +111,7 @@
                                         
                                     @endforeach
                                     
-                                </tbody> --}}
+                                </tbody>
                             </table>
                             
                         </div>
