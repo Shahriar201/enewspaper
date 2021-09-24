@@ -38,8 +38,12 @@
                     <div class="card">
                         <div class="card-header">
                             <h3>Contact List
+                                
+                                @if ($countContact<1)
                                 <a class="btn btn-success float-right btn-sm" href="{{ route('contacts.add') }}">
                                     <i class="fa fa-plus-circle"></i>Add Contact</a>
+                                @endif
+
                             </h3>
                         </div>
                         <!-- /.card-header -->

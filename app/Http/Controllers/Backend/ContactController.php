@@ -10,6 +10,7 @@ class ContactController extends Controller
 {
     public function view(){
         $data['allData'] = Contact::all();
+        $data['countContact'] = Contact::count();
 
         return view('backend.contact.view-contact', $data);
     }

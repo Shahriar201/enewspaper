@@ -9,6 +9,7 @@ use App\Model\Menu;
 use App\Model\District;
 use App\Model\Post;
 use App\Model\Category;
+use App\Model\Contact;
 
 class FrontendController extends Controller
 {
@@ -17,6 +18,7 @@ class FrontendController extends Controller
         $data['menues'] = Menu::where('status', '0')->orderBy('priority', 'DESC')->get();
         $data['districts'] = District::where('status', '0')->get();
         $data['posts'] = Post::where('status', '0')->get();
+        $data['contact'] = Contact::first();
         
         return view('frontend.layouts.home', $data);
     }

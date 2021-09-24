@@ -35,12 +35,12 @@
                 </h3>
                 <div class="footer-content">
                     <ul>
-                        <li> <i class="fas fa-map-marker-alt"></i> ৩০, কারওয়ান বাজার, বা/এ(৬ষ্ঠ তলা), ঢাকা-১২১৫
+                        <li> <i class="fas fa-map-marker-alt"></i> {{ $contact->contact_title_location_en }}
                         </li>
-                        <li> <i class="fas fa-phone-alt"></i> খবর:০১৯৫৫-৫৬৩৬২০, সার্কুলেশন:০১৪০৬-৬৯৯৬৮০,
-                            বিজ্ঞাপন:০১৪০৬-৬৯৯৬৮১
+                        <li> <i class="fas fa-phone-alt"></i> খবর:{{ $contact->contact_phone_en }}, সার্কুলেশন:{{ $contact->contact_circulation_phone_en }},
+                            বিজ্ঞাপন:{{ $contact->contact_advertising_phone_en }}
                         </li>
-                        <li> <i class="fas fa-envelope"></i> info@dailyjagaran.com, deshjagaranbd@gmail.com
+                        <li> <i class="fas fa-envelope"></i> {{ $contact->contact_email }}
                         </li>
                     </ul>
                 </div>
@@ -56,9 +56,9 @@
                         </h3>
                         <div class="footer-content">
 
-                            <div align="left">সম্পাদক : মো: আলা উদ্দিন</div>
-                            <div align="left">নির্বাহী সম্পাদক : আখম আলী আজগর<br></div>
-                            <div align="left">বার্তা সম্পাদক :&nbsp; নাসির চৌধুরী</div>
+                            <div align="left">সম্পাদক : {{ $contact->editor_name_en }}</div>
+                            <div align="left">নির্বাহী সম্পাদক : {{ $contact->executive_editor_name_en }}<br></div>
+                            <div align="left">বার্তা সম্পাদক :&nbsp; {{ $contact->message_editor_name_en }}</div>
 
                         </div>
                     </div>
@@ -69,9 +69,9 @@
 
                         </h3>
                         <div class="footer-content">
-                            <div align="left">অফিস : মিরপুর-১, ঢাকা</div>
-                            <div align="left">মোবাইল : ০১৭১১০০০০০০</div>
-                            <div align="left">ইমেইল : info@yourdomain.com<br></div>
+                            <div align="left">অফিস : {{ $contact->editor_office_en }}</div>
+                            <div align="left">মোবাইল : {{ $contact->editor_phone_en }}</div>
+                            <div align="left">ইমেইল : {{ $contact->editor_email }}<br></div>
 
                         </div>
                     </div>
